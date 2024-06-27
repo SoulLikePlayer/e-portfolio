@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+function Header ()  {
   return (
     <header>
       <nav className="navbar navbar-expand-lg">

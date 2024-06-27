@@ -1,0 +1,120 @@
+/* Styles généraux pour les articles */
+.animated-article {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animated-article h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+.animated-article p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Animation de texte pour les titres et paragraphes */
+@keyframes textFadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animated-article h2,
+.animated-article p {
+  animation: textFadeInUp 0.5s ease forwards;
+}
+
+/* Boutons pour les articles */
+.grid-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.switch-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.switch-button:hover {
+  background-color: #0056b3;
+}
+
+/* Effet de bordure néon */
+.neon-border {
+  position: relative;
+  border: 2px solid transparent;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: none;
+  border: 2px solid #007bff;
+  z-index: -1;
+  border-radius: 8px;
+  animation: neon-pulse 1.5s infinite;
+}
+
+@keyframes neon-pulse {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.4;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Media query pour ajuster la mise en page sur les petits écrans */
+@media (max-width: 768px) {
+  .grid-buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .switch-button {
+      margin-top: 10px;
+  }
+}
+
+.animated-article:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
