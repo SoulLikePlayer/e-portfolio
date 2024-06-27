@@ -1,0 +1,31 @@
+.neon-border {
+  position: relative;
+  padding: 20px;
+  border: 3px solid transparent;
+  animation: neon-animation 5s infinite;
+}
+
+@keyframes neon-animation {
+  0%, 100% {
+    border-color: var(--neon-color-1); /* Début et fin de l'animation avec la couleur 1 */
+    box-shadow: 0 0 2px var(--neon-color-1), 0 0 3px var(--neon-color-1), 0 0 4px var(--neon-color-1), 0 0 5px var(--neon-color-1), 0 0 6px var(--neon-color-1), 0 0 7px var(--neon-color-1), 0 0 8px var(--neon-color-1), 0 0 9px var(--neon-color-1);
+  }
+  50% {
+    border-color: var(--neon-color-2); /* Milieu de l'animation avec la couleur 2 */
+    box-shadow: 0 0 2px var(--neon-color-2), 0 0 3px var(--neon-color-2), 0 0 4px var(--neon-color-2), 0 0 5px var(--neon-color-2), 0 0 6px var(--neon-color-2), 0 0 7px var(--neon-color-2), 0 0 8px var(--neon-color-2), 0 0 9px var(--neon-color-2);
+  }
+}
+
+.neon-border:hover {
+  transform: scale(1.05);
+}
+
+.grid .neon-border h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.grid .neon-border p {
+  font-size: 1em;
+  color: #555;
+}
