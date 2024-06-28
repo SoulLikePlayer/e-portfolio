@@ -108,9 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <button id="closeButton">&#x1F5D9;</button>
             <section class="intro-section text-center py-5">
               <h1>${name}</h1>
+            <section
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4">
+              <div class="rounded bg-white p-4 col-span-6 rounded shadow-md text-dark article-container">  
               <p color="dark">Email: ${email}</p>
               <p>Téléphone: ${phone}</p>
               <p>Github: <a href="${github}" target="_blank">${github}</a></p>
+            </div>
+            </div>  
             </section>
           `;
         } catch (error) {
