@@ -1,6 +1,18 @@
 [
   {
     "title": "EvoDict",
-    "description": "EvoDict est une combinaison de Evolution Dictionnary. c'est une classe pythons permettant de crée des dictionnaire (ou objet utilisant les dictionnaire) de manière plus simple en imposant des conditions."
+    "description": "EvoDict est une combinaison de Evolution Dictionnary. c'est une classe pythons permettant de crée des dictionnaire (ou objet utilisant les dictionnaire) de manière plus simple en imposant des conditions.",
+    "github" : "https://github.com/SoulLikePlayer/Evodict"
+  },
+
+  {
+    "title": "E-Porfolio",
+    "description": "Mon portfolio est une vitrine interactive de mes compétences, parcours académique et projets. Il offre une expérience immersive avec des animations fluides et un design moderne, permettant aux visiteurs d'explorer mes réalisations de manière intuitive et captivante.",
+    "github" : "https://github.com/SoulLikePlayer/e-portfolio"
+  },
+
+  {
+    "title": "Porjet 2",
+    "description": "description"
   }
 ]
