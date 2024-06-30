@@ -7,7 +7,11 @@ import './styles/neon.css';
 import './styles/animation-article.css';
 
 // Import des fichiers JavaScript
+<<<<<<< HEAD
 import './scripts/app.js';
+=======
+import './scripts/app.js'; 
+>>>>>>> Stable_version
 import './scripts/header.js';
 import './scripts/main.js';
 
