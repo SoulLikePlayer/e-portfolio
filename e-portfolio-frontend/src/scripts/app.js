@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
         article.setAttribute('data-content', 'competence');
         break;
       case 'competence':
+        h2.textContent = "Mes projets";
+        p.textContent = "Description de l'article 6.";
+        article.setAttribute('data-content', 'project');
+        break;
+      case 'project':
         h2.textContent = "Qui suis-je ?";
         p.textContent = "Description de l'article 1.";
         article.setAttribute('data-content', 'biographie');
@@ -69,10 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Écouter les clics sur les articles pour afficher un contenu détaillé
   articles.forEach(article => {
-    article.addEventListener('click', () => {
+    article.addEventListener('click', async () => {
       square.classList.add('show');
       const content = article.getAttribute('data-content');
-      square.innerHTML = getContentHTML(content);
+      square.innerHTML = await getContentHTML(content);
     });
   });
 
@@ -95,41 +100,81 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Fonction pour générer le HTML du contenu détaillé
-  function getContentHTML(content) {
+  // Fonction asynchrone pour générer le HTML du contenu détaillé
+  async function getContentHTML(content) {
     switch (content) {
       case 'biographie':
-        return `<button id="closeButton">&#x1F5D9;</button>
-                <section class="intro-section text-center py-5">
-                  <h1>Titre de la section</h1>
-                </section>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4">
-                  <div class="rounded bg-white p-4 col-span-6 rounded shadow-md animated-article article1 text-dark article-container">Contenu de l'article 1</div>
-                </div>`;
+        try {
+          const response = await fetch('http://localhost:5000/api/personal-info');
+          const data = await response.json();
+          const { name, email, phone, github } = data;
+
+          return `
+            <button id="closeButton">&#x1F5D9;</button>
+            <section class="intro-section text-center py-5">
+              <h1>${name}</h1>
+            </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4">
+              <div class="rounded bg-white p-4 col-span-6 rounded shadow-md text-dark article-container">  
+                <p>Email: ${email}</p><br />
+                <p>Téléphone: ${phone}</p><br /> 
+                <p>Github: <a href="${github}" target="_blank">${github}</a></p>
+              </div>
+            </div>  
+          `;
+        } catch (error) {
+          console.error('Error fetching personal info:', error);
+          return '<p>Erreur de chargement des données</p>';
+        }
+
       case 'competence':
-        return `<button id="closeButton">&#x1F5D9;</button>
-                <section class="intro-section text-center py-5">
-                  <h1>Titre de la section</h1>
-                </section>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4">
-                  <div class="rounded bg-white p-4 col-span-6 rounded shadow-md animated-article article1 text-dark article-container">Contenu de l'article 4</div>
-                </div>`;
-      case 'etude':
-        return `<button id="closeButton">&#x1F5D9;</button>
-                <section class="intro-section text-center py-5">
-                  <h1>Titre de la section</h1>
-                </section>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4">
-                  <div class="rounded bg-white p-4 col-span-6 rounded shadow-md animated-article article1 text-dark article-container">Contenu de l'article 2</div>
-                </div>`;
-      case 'parcours':
-        return `<button id="closeButton">&#x1F5D9;</button>
-                <section class="intro-section text-center py-5">
-                  <h1>Titre de la section</h1>
-                </section>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4">
-                  <div class="rounded bg-white p-4 col-span-6 rounded shadow-md animated-article article1 text-dark article-container">Contenu de l'article 5</div>
-                </div>`;
+        try {
+          const response = await fetch('http://localhost:5000/api/skills');
+          const data = await response.json();
+
+          return `
+            <button id="closeButton">&#x1F5D9;</button>
+            <section class="intro-section text-center py-5">
+              <h1>Compétences</h1>
+            </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4">
+              <div class="rounded bg-white p-4 col-span-6 rounded shadow-md text-dark article-container">
+                <ul>${data.map(skill => `<li>${skill}</li>`).join('')}</ul>
+              </div>
+            </div>
+          `;
+        } catch (error) {
+          console.error('Error fetching skills:', error);
+          return '<p>Erreur de chargement des données</p>';
+        }
+
+      case 'project':
+        try {
+          const response = await fetch('http://localhost:5000/api/projects');
+          const data = await response.json();
+
+          return `
+            <button id="closeButton">&#x1F5D9;</button>
+            <section class="intro-section text-center py-5">
+              <h1>Projets</h1>
+            </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4 project">
+              <div class="rounded bg-white p-4 col-span-6 rounded shadow-md text-dark article-container">
+                ${data.map(project => `
+                  <div class="project">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    ${project.github ? `<p><a href="${project.github}" target="_blank">GitHub</a></p>` : ''}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        } catch (error) {
+          console.error('Error fetching projects:', error);
+          return '<p>Erreur de chargement des données</p>';
+        }
+
       default:
         return '';
     }
