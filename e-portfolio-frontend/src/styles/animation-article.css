@@ -8,6 +8,7 @@
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Ajout de curseur pointer pour indiquer la possibilité de cliquer */
 }
 
 .article-hidden {
@@ -31,12 +32,12 @@
 /* Animation de texte pour les titres et paragraphes */
 @keyframes textFadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -45,29 +46,24 @@
   animation: textFadeInUp 0.5s ease forwards;
 }
 
-/* Boutons pour les articles */
-.grid-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+/* Effet de zoom au survol */
+.animated-article:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.switch-button {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-radius: 4px;
+/* Media query pour ajuster la mise en page sur les petits écrans */
+@media (max-width: 768px) {
+  .grid-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .switch-button {
+    margin-top: 10px;
+  }
 }
 
-.switch-button:hover {
-  background-color: #0056b3;
-}
 
 /* Effet de bordure néon */
 .neon-border {
