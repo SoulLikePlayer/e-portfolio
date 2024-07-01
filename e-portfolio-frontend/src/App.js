@@ -7,11 +7,8 @@ import './styles/neon.css';
 import './styles/animation-article.css';
 
 // Import des fichiers JavaScript
-<<<<<<< HEAD
 import './scripts/app.js';
-=======
 import './scripts/app.js'; 
->>>>>>> Stable_version
 import './scripts/header.js';
 import './scripts/main.js';
 
@@ -21,7 +18,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="bg-dark text-light">
+    <div>
       <div className="square"></div>
       <Header />
       <Content />
