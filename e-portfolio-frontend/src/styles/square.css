@@ -24,7 +24,7 @@
   height: 100vh;
   z-index: 99;
   background-color: white;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out, transform 0.5s ease-in-out;
   transform: translateX(100%);
   overflow-y: auto;
   display: flex;
@@ -35,12 +35,12 @@
 }
 
 .square.show {
-  width: 100%;
+  width: 85%;
   transform: translateX(0%);
 }
 
 .square.hide {
-  width: 0%;
+  width: 0;
   transform: translateX(100%);
 }
 
@@ -91,8 +91,7 @@
   background-color: #cc0000;
 }
 
-
-/*partie project*/
+/* Partie project */
 .square .project {
   margin-bottom: 20px;
   text-align: center;

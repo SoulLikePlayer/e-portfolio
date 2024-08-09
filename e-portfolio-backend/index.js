@@ -14,11 +14,10 @@ const personalInfoRouter = require('./routes/personalInfo');
 const skillsRouter = require('./routes/skills');
 const projectsRouter = require('./routes/projects');
 
-app.use('/api/personal-info', personalInfoRouter);
-app.use('/api/skills', skillsRouter);
-app.use('/api/projects', projectsRouter);
+app.use('/api/biographie', personalInfoRouter);
+app.use('/api/competence', skillsRouter);
+app.use('/api/project', projectsRouter);
 
-// Serve static files (optional, if needed)
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
