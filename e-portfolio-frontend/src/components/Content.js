@@ -86,7 +86,7 @@ function Content({ onContentChange }) {
   const handleArticleClick = async (index) => {
     const contentType = articles[index].id;
     console.log(`http://${window.location.hostname}:5000/api/${contentType}`);
-    const response = await fetch(`http://${window.location.hostname}:5000/api/${contentType}`);
+    const response = await fetch(`https://e-portfolio-95fd6jz6z-soullikeplayers-projects.vercel.app/api/${contentType}`);
     const fetchedData = await response.json();
     onContentChange(contentType, fetchedData);
   };
