@@ -11,7 +11,9 @@ const Competence = ({ closeSquare }) => {
     "Tailwind CSS",
     "Python",
     "Java",
-    "JavaFX"
+    "JavaFX",
+    "Rust",
+    "PHP"
   ];
 
   return (

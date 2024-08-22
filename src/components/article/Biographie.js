@@ -18,7 +18,7 @@ const Biographie = ({ closeSquare }) => {
         <div className="rounded bg-white p-4 col-span-6 rounded shadow-md text-dark article-container">  
           <p>Email: {data.email}</p><br />
           <p>Téléphone: {data.phone}</p><br /> 
-          <p>Github: <a href={data.github} target="_blank" rel="noopener noreferrer">{data.github}</a></p>
+          <p><a href={data.github} target="_blank" rel="noopener noreferrer">Voir mon GitHub</a></p>
         </div>
       </div>
     </div>

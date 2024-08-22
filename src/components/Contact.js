@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import "../styles/Contact.css"; // Importer le fichier CSS externe
+import {motion} from "framer-motion";
+
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -49,7 +51,10 @@ function Contact() {
   };
 
   return (
-    <div className="contact-container">
+    <motion.div className="contact-container"
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}>
       <h2 id="contact">Contactez-moi</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -78,7 +83,7 @@ function Contact() {
         </label>
         <button type="submit">Envoyer</button>
       </form>
-    </div>
+    </motion.div>
   );
 }
 

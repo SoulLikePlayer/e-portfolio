@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import Header from './components/Header';
-import Content from './components/Content';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Biographie from './components/article/Biographie';
 import Competence from './components/article/Competence';
 import Project from './components/article/Project';
+import RouteAnimer from './components/RouteAnimer';
 
 function App() {
   const [content, setContent] = useState(null);
-
   const handleContentChange = (newContent) => {
     setContent(newContent);
     document.querySelector('.square').classList.add('show');
@@ -31,10 +29,7 @@ function App() {
           {content === 'project' && <Project closeSquare={closeSquare} />}
         </div>
         <Header />
-        <Routes>
-          <Route path="/" element={<Content onContentChange={handleContentChange} />} />
-          <Route path="/ContactMe" element={<Contact />} />
-        </Routes>
+        <RouteAnimer onContentChange={handleContentChange}/>
         <Footer />
       </div>
     </Router>

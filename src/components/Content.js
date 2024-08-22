@@ -4,6 +4,7 @@ import '../styles/style.css';
 import '../styles/square.css';
 import '../styles/neon.css';
 import '../styles/animation-article.css';
+import {motion} from "framer-motion";
 
 function Content({ onContentChange }) {
   const [articles, setArticles] = useState([
@@ -89,7 +90,10 @@ function Content({ onContentChange }) {
   };
 
   return (
-    <main>
+    <motion.main
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}>
       <section className="intro-section text-center py-5">
         <h2 className="text-4xl mb-4">Bienvenue sur mon e-portfolio</h2>
         <p className="text-gray-400">Découvrez mon parcours, mes compétences et mes projets.</p>
@@ -114,7 +118,7 @@ function Content({ onContentChange }) {
           ))}
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 }
 
