@@ -1,14 +1,5 @@
 body {
-  transition: background-color 0.5s ease;
-}
-
-header {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 main {
@@ -28,6 +19,7 @@ main .grid {
 
 .article1, .article2, .article3 {
   transition: opacity 0.5s ease, transform 0.5s ease;
+  cursor: pointer;
 }
 
 .article-visible {
@@ -41,7 +33,7 @@ main .grid {
   pointer-events: none;
 }
 
-.animated-article{
+.animated-article {
   position: relative;
 }
 
@@ -56,7 +48,7 @@ h2 {
   font-weight: bold;
 }
 
-h2:not(.titre, #contact, .project-carousel, .projectName) {
+.eportfolio{
   font-family: Impact;
   filter: drop-shadow(0mm -0.5mm 1mm #00bfff) drop-shadow(1mm 0.5mm 1mm #ff0000);
 }
@@ -79,6 +71,7 @@ h2:not(.titre, #contact, .project-carousel, .projectName) {
   display: block;
   width: 100%;
   padding: 10px;
+  margin-bottom: 10px;
   text-align: center;
   background-color: transparent;
   border: none;
@@ -89,8 +82,6 @@ h2:not(.titre, #contact, .project-carousel, .projectName) {
 .animated-article + .down-arrow {
   margin-top: 10px;
 }
-
-
 
 footer {
   text-align: center;
@@ -137,4 +128,14 @@ footer {
   .article-container {
     margin-bottom: 20px; 
   }
+}
+
+body.light {
+  background-color: #f1f1f1; 
+  color: #000000;
+}
+
+body.dark  {
+  background-color: #333333; 
+  color: #ffffff;
 }

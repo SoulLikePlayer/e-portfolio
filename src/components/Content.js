@@ -70,9 +70,12 @@ function Content({ onContentChange }) {
             newArticles[index] = { id: 'biographie', title: 'Qui suis-je ?', content: 'Découvrez qui je suis, ma personnalité, mon github, mon numéro de téléphone, etc...' };
             break;
           case 'etude':
-            newArticles[index] = { id: 'parcours', title: 'Mon Parcours scolaire', content: 'Description de l\'article 5.' };
+            newArticles[index] = { id: 'parcours', title: 'Mon Parcours', content: 'Découvrez mon parcours à travers une frise chronologique.' };
             break;
           case 'parcours':
+            newArticles[index] = { id: 'localisation', title: 'Où je vis ?', content: 'Découvrez ma localisation.' };
+            break;  
+          case 'localisation':
             newArticles[index] = { id: 'etude', title: 'Que fais-je ?', content: 'Description de l\'article 2.' };
             break;
           default:
@@ -91,11 +94,12 @@ function Content({ onContentChange }) {
 
   return (
     <motion.main
-    initial={{opacity: 0}}
-    animate={{opacity: 1}}
-    exit={{opacity: 0}}>
+    initial={{ opacity: 0, filter: 'blur(10px)' }}
+      animate={{ opacity: 1, filter: 'blur(0px)' }}
+      exit={{ opacity: 0, filter: 'blur(10px)' }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}>
       <section className="intro-section text-center py-5">
-        <h2 className="text-4xl mb-4">Bienvenue sur mon e-portfolio</h2>
+        <h2 className="text-4xl mb-4 eportfolio">Bienvenue sur mon e-portfolio</h2>
         <p className="text-gray-400">Découvrez mon parcours, mes compétences et mes projets.</p>
       </section>
 

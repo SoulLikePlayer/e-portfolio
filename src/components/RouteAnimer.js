@@ -1,11 +1,10 @@
 import React from "react";
-import { Routes, Route, useLocation} from 'react-router-dom';
-import {AnimatePresence } from "framer-motion";
-
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from "framer-motion";
 import Contact from "./Contact";
 import Content from "./Content";
 
-function RouteAnimer({onContentChange}){
+function RouteAnimer({ onContentChange }) {
     const location = useLocation();
     return (
         <AnimatePresence>
@@ -14,7 +13,7 @@ function RouteAnimer({onContentChange}){
                 <Route path="/ContactMe" element={<Contact />} />
             </Routes>
         </AnimatePresence>
-    )
+    );
 }
 
 export default RouteAnimer;
