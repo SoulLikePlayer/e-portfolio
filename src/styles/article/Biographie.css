@@ -1,0 +1,101 @@
+/* Conteneur principal pour la biographie */
+.biography-container {
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+/* Section d'introduction */
+.intro-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.biography-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 20px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Contenu de la biographie */
+.biography-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Détails de la biographie */
+.bio-details {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bio-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
+  font-size: 16px;
+}
+
+.bio-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.bio-link:hover {
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .biography-container {
+    max-width: 700px;
+  }
+
+  .bio-text {
+    font-size: 17px;
+  }
+
+  .contact-info {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .biography-container {
+    max-width: 900px;
+  }
+
+  .biography-title {
+    font-size: 42px;
+  }
+
+  .bio-text {
+    font-size: 18px;
+  }
+
+  .contact-info {
+    font-size: 16px;
+  }
+}

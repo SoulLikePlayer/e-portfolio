@@ -1,5 +1,5 @@
 import React from "react";
-import Carte from "../Carte";
+import Carte from "../composents/Carte";
 
 const Localisation = ({ closeSquare }) => {
     const position = [49.2861, -0.5950];

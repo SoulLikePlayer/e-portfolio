@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from "framer-motion";
-import Contact from "./Contact";
-import Content from "./Content";
+import Contact from "../pages/Contact";
+import Content from "../pages/Content";
 
 function RouteAnimer({ onContentChange }) {
     const location = useLocation();

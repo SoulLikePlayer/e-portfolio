@@ -2,7 +2,7 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import "../styles/Carousel.css";
+import "../../styles/composents/Carousel.css";
 
 const ProjectCarousel = ({ projects }) => {
   return (
@@ -17,12 +17,18 @@ const ProjectCarousel = ({ projects }) => {
           <div key={index} className={`slide ${stateClass}`} style={{ padding: '20px', textAlign: 'center' }}>
             <h2 className='projectName'>{project.title}</h2>
             <p>{project.description}</p>
-            {project.github && (
+            {project.github ? (
               <a href={project.github} target="_blank" rel="noopener noreferrer">
                 <button style={{ padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px' }}>
                   Voir sur GitHub
                 </button>
               </a>
+            ) : (
+              <a href={false}>
+                <button style={{ padding: '10px', backgroundColor: '#808080', color: '#fff', border: 'none', borderRadius: '5px'}}>
+                  Pas de github
+                </button>
+              </a>  
             )}
           </div>
         );

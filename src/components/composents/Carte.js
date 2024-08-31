@@ -2,7 +2,7 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import "../styles/Carte.css";
+import "../../styles/composents/Carte.css";
 
 delete L.Icon.Default.prototype._getIconUrl;
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import "../styles/Contact.css"; // Importer le fichier CSS externe
+import "../../styles/page/Contact.css";
 import {motion} from "framer-motion";
 
 

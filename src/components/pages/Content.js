@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/reset-tool.css';
-import '../styles/style.css';
-import '../styles/square.css';
-import '../styles/neon.css';
-import '../styles/animation-article.css';
-import {motion} from "framer-motion";
+import '../../styles/reset-tool.css';
+import '../../styles/style.css';
+import '../../styles/square.css';
+import '../../styles/neon.css';
+import '../../styles/animation-article.css';
+import { motion } from "framer-motion";
+import { Typewriter } from 'react-simple-typewriter';
+import { articlesData } from '../data/article';
 
 function Content({ onContentChange }) {
-  const [articles, setArticles] = useState([
-    { id: 'biographie', title: 'Qui suis-je ?', content: 'Découvrez qui je suis, ma personnalité, mon github, mon numéro de téléphone, etc...' },
-    { id: 'etude', title: 'Que fais-je ?', content: 'Description de l\'article 2.' },
-    { id: 'futur', title: 'Qui je veux être ?', content: 'Description de l\'article 3.' },
-  ]);
-
+  const [articles, setArticles] = useState(articlesData);
   const [transitioning, setTransitioning] = useState(null);
 
   useEffect(() => {
@@ -94,13 +91,23 @@ function Content({ onContentChange }) {
 
   return (
     <motion.main
-    initial={{ opacity: 0, filter: 'blur(10px)' }}
+      initial={{ opacity: 0, filter: 'blur(10px)' }}
       animate={{ opacity: 1, filter: 'blur(0px)' }}
       exit={{ opacity: 0, filter: 'blur(10px)' }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}>
+      
       <section className="intro-section text-center py-5">
-        <h2 className="text-4xl mb-4 eportfolio">Bienvenue sur mon e-portfolio</h2>
-        <p className="text-gray-400">Découvrez mon parcours, mes compétences et mes projets.</p>
+        <h2 className="text-4xl mb-4 eportfolio">
+          <Typewriter words={['Bienvenue sur mon e-portfolio']} />
+        </h2>
+        <p className="text-gray-400">
+          <Typewriter
+            words={['Découvrez mon parcours, mes compétences et mes projets.']}
+            cursor
+            cursorStyle="|"
+            loop
+          />
+        </p>
       </section>
 
       <section className="my-8">

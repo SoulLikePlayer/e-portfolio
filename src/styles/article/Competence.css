@@ -1,0 +1,23 @@
+.competence {
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+.competence ul {
+  padding: 0;
+  list-style: none;
+}
+
+.competence li {
+  font-size: 1.1em;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.competence li:last-child {
+  border-bottom: none;
+}
+
+.grid {
+  padding: 0 10px;
+}

@@ -114,3 +114,40 @@
   line-height: 1.5;
   color: #666;
 }
+
+#error-color {
+  background-color: #FFCCCC;
+}
+
+#waiting-color {
+  background-color: #FFF4CC;
+}
+
+#complete-color {
+  background-color: #DFF2BF;
+}
+
+/* Styles pour les légendes */
+.legend-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.legend-text {
+  font-size: 1rem;
+  color: #333;
+}

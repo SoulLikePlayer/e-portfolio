@@ -48,11 +48,6 @@ h2 {
   font-weight: bold;
 }
 
-.eportfolio{
-  font-family: Impact;
-  filter: drop-shadow(0mm -0.5mm 1mm #00bfff) drop-shadow(1mm 0.5mm 1mm #ff0000);
-}
-
 .intro-section {
   opacity: 0;
   animation: fadeIn 1.5s ease-in-out forwards;
@@ -138,4 +133,17 @@ body.light {
 body.dark  {
   background-color: #333333; 
   color: #ffffff;
+}
+
+/*E-Portfolio titre*/
+
+.eportfolio {
+  font-family: 'Poppins', sans-serif; 
+  font-size: 3rem;
+  font-weight: 700; 
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
 }

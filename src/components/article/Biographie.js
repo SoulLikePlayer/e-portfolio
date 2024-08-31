@@ -1,24 +1,28 @@
 import React from 'react';
+import '../../styles/article/Biographie.css';
 
-const Biographie = ({ closeSquare }) => {
-  const data = {
-    name: "Louis Lazare",
-    email: "louislazare.pro@gmail.com",
-    phone: "+33783105098",
-    github: "https://github.com/SoulLikePlayer/"
-  };
+import { data } from '../data/bio';
 
+const Biographie = () => {
   return (
-    <div>
-      <button id="closeButton" onClick={closeSquare}>&#x1F5D9;</button>
-      <section className="intro-section text-center py-5">
-        <h1>{data.name}</h1>
+    <div className="biography-container">
+      <section className="intro-section">
+        <h1 className="biography-title">{data.name}</h1>
+        <p className="tagline">Développeur Full Stack</p>
       </section>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4 -mx-4">
-        <div className="rounded bg-white p-4 col-span-6 rounded shadow-md text-dark article-container">  
-          <p>Email: {data.email}</p><br />
-          <p>Téléphone: {data.phone}</p><br /> 
-          <p><a href={data.github} target="_blank" rel="noopener noreferrer">Voir mon GitHub</a></p>
+      <div className="biography-content">
+        <div className="bio-details">
+          <p className="bio-text">
+            Je suis {data.name}, un développeur full stack. Je maîtrise plusieurs langages de programmation, frameworks et technologies, ce qui me permet de concevoir et développer des applications robustes et évolutives. Mon approche est axée sur la qualité du code, la performance, et l'expérience utilisateur.
+          </p>
+          <p className="bio-text">
+            Mon parcours m'a permis de travailler sur divers projets, allant de simples sites web à des applications complexes. Je suis toujours à l'affût des dernières tendances technologiques pour offrir les meilleures solutions à mes clients.
+          </p>
+          <div className="contact-info">
+            <p>Email: <a href={`mailto:${data.email}`} className="bio-link">{data.email}</a></p>
+            <p>Téléphone: <a href={`tel:${data.phone}`} className="bio-link">{data.phone}</a></p>
+            <p><a href={data.github} target="_blank" rel="noopener noreferrer" className="bio-link">Voir mon GitHub</a></p>
+          </div>
         </div>
       </div>
     </div>

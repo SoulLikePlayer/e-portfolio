@@ -1,0 +1,117 @@
+/* Carousel Container */
+.project-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Slide Style */
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Project Title */
+.projectName {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Project Description */
+.slide p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* GitHub Button */
+.slide a button {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slide a button:hover {
+  background-color: #0056b3;
+}
+
+/* Slide State Classes */
+.slide.error {
+  background-color: #ffe5e5;
+}
+
+.slide.waiting {
+  background-color: #fff5e6;
+}
+
+.slide.complete {
+  background-color: #e6ffe6;
+}
+
+.slide.error p, .slide.error .projectName {
+  color: #D8000C;
+}
+
+.slide.waiting p, .slide.waiting .projectName {
+  color: #8A6D3B;
+}
+
+.slide.complete p, .slide.complete .projectName {
+  color: #4F8A10;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .project-carousel {
+    max-width: 100%;
+  }
+
+  .projectName {
+    font-size: 1.5rem;
+  }
+
+  .slide p {
+    font-size: 0.9rem;
+  }
+
+  .slide a button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    padding: 30px 15px;
+  }
+
+  .projectName {
+    font-size: 1.3rem;
+  }
+
+  .slide p {
+    font-size: 0.85rem;
+  }
+
+  .slide a button {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+}

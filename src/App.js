@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/pages/Header';
+import Footer from './components/pages/Footer';
+import RouteAnimer from './components/composents/RouteAnimer';
 import Biographie from './components/article/Biographie';
 import Competence from './components/article/Competence';
 import Project from './components/article/Project';
 import Localisation from './components/article/Localisation';
 import Parcours from './components/article/Parcours';
-import RouteAnimer from './components/RouteAnimer';
+
+const componentsMap = {
+  'biographie': Biographie,
+  'competence': Competence,
+  'project': Project,
+  'localisation': Localisation,
+  'parcours': Parcours,
+};
 
 function App() {
   const [content, setContent] = useState(null);
@@ -37,17 +45,15 @@ function App() {
     localStorage.setItem('theme', newTheme);
   };
 
+  const SelectedComponent = componentsMap[content] || null;
+
   return (
     <Router>
       <div>
         <Header toggleTheme={toggleTheme} theme={theme} />
         <div className="square">
           <button id="closeButton" onClick={closeSquare}>&#x1F5D9;</button>
-          {content === 'biographie' && <Biographie closeSquare={closeSquare} />}
-          {content === 'competence' && <Competence closeSquare={closeSquare} />}
-          {content === 'project' && <Project closeSquare={closeSquare} />}
-          {content === 'localisation' && <Localisation closeSquare={closeSquare} />}
-          {content === 'parcours' && <Parcours closeSquare={closeSquare} />}
+          {SelectedComponent && <SelectedComponent closeSquare={closeSquare} />}
         </div>
         <RouteAnimer onContentChange={handleContentChange} />
         <Footer />

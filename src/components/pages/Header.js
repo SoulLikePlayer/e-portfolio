@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSun, FaHome, FaMoon, FaEnvelope, FaBars, FaCode } from 'react-icons/fa';
-import '../styles/Header.css';
+import '../../styles/page/Header.css';
 
 function Header({ toggleTheme, theme }) {
   const [isOpen, setIsOpen] = useState(false);
