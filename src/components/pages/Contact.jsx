@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
+import { FaExclamationCircle } from "react-icons/fa";
 import "../../styles/page/Contact.css";
 
 function Contact() {
@@ -57,9 +58,12 @@ function Contact() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.nom}
+            className={formik.touched.nom && formik.errors.nom ? "input-error" : ""}
           />
           {formik.touched.nom && formik.errors.nom ? (
-            <div className="error">{formik.errors.nom}</div>
+            <div className="error-message">
+              <FaExclamationCircle className="error-icon" /> {formik.errors.nom}
+            </div>
           ) : null}
         </label>
         <label>
@@ -80,9 +84,12 @@ function Contact() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
+            className={formik.touched.email && formik.errors.email ? "input-error" : ""}
           />
           {formik.touched.email && formik.errors.email ? (
-            <div className="error">{formik.errors.email}</div>
+            <div className="error-message">
+              <FaExclamationCircle className="error-icon" /> {formik.errors.email}
+            </div>
           ) : null}
         </label>
         <label>
@@ -112,9 +119,12 @@ function Contact() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.message}
+            className={formik.touched.message && formik.errors.message ? "input-error" : ""}
           />
           {formik.touched.message && formik.errors.message ? (
-            <div className="error">{formik.errors.message}</div>
+            <div className="error-message">
+              <FaExclamationCircle className="error-icon" /> {formik.errors.message}
+            </div>
           ) : null}
         </label>
         <button type="submit">Envoyer</button>

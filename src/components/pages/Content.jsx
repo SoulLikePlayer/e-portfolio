@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../../styles/reset-tool.css';
 import '../../styles/style.css';
 import '../../styles/square.css';
 import '../../styles/neon.css';
