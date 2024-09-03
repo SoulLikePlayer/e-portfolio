@@ -7,7 +7,7 @@ import { scolaire } from "../data/parcours"
 
 function Parcours({ closeSquare }) {
   return (
-    <div className="parcours-container">
+    <section className="intro-section text-center py-5 parcours-container">
       <h1>Mon Parcours</h1>
       <Chrono
         items={scolaire}
@@ -24,7 +24,7 @@ function Parcours({ closeSquare }) {
         hideControls
         timelinePointShape="square"
       />
-    </div>
+    </section>
   );
 }
 

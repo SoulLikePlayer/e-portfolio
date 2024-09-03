@@ -1,7 +1,8 @@
 .custom-header {
   position: sticky;
   top: 0;
-  z-index: 90; /* Ajustement du z-index */
+  z-index: 90;
+  transition: color 0.3s ease;
   background-color: var(--header-bg-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
@@ -44,7 +45,7 @@
 }
 
 .navbar-toggler.open .menu-icon {
-  transform: rotate(90deg); /* Transforme l'icône en croix */
+  transform: rotate(90deg);
 }
 
 .theme-toggle {

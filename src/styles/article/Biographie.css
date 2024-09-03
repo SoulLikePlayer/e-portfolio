@@ -99,3 +99,22 @@
     font-size: 16px;
   }
 }
+
+.bio-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bio-button:hover {
+  background-color: #0056b3;
+}

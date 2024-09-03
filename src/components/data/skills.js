@@ -10,5 +10,8 @@ export const skills = [
     "Java",
     "JavaFX",
     "Rust",
-    "PHP"
+    "PHP",
+    "Bootstrap",
+    "Foundation",
+    "Flask"
   ];

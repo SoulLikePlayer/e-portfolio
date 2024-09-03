@@ -43,6 +43,7 @@ export const projects = [
   {
     "title": "Site Web : Monster Hunter World",
     "description": "Un site web sur le jeux vidéo Monster Hunter World",
+    "github" : "https://github.com/SoulLikePlayer/MHW-Iceborn-Compendium",
     "state": "Waiting"
   }
 ];

@@ -21,7 +21,11 @@ const Biographie = () => {
           <div className="contact-info">
             <p>Email: <a href={`mailto:${data.email}`} className="bio-link">{data.email}</a></p>
             <p>Téléphone: <a href={`tel:${data.phone}`} className="bio-link">{data.phone}</a></p>
-            <p><a href={data.github} target="_blank" rel="noopener noreferrer" className="bio-link">Voir mon GitHub</a></p>
+            <p>
+              <a href={data.github} target="_blank" rel="noopener noreferrer" className="bio-button">
+                Voir mon GitHub
+              </a>
+            </p>
           </div>
         </div>
       </div>

@@ -49,9 +49,19 @@
   .contact-container button:hover {
     background-color: #0056b3;
   }
-  
+
   .contact-container span {
     color: red;
     font-weight: bold;
   }
   
+.contact-container input[type="text"]:focus,
+.contact-container input[type="email"]:focus,
+.contact-container textarea:focus,
+.contact-container button:focus {
+    outline: none;
+    border-color: var(--primary-color-hover);
+    box-shadow: 0 0 5px var(--primary-color-hover);
+    background-color: #eef7ff; 
+}
+

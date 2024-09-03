@@ -58,10 +58,10 @@ function Content({ onContentChange }) {
 
         switch (currentArticle.id) {
           case 'biographie':
-            newArticles[index] = { id: 'competence', title: 'Mes compétences', content: 'Description de l\'article 4.' };
+            newArticles[index] = { id: 'competence', title: 'Mes compétences', content: 'Découvrez les différentes compétence apprise au long de mes experience' };
             break;
           case 'competence':
-            newArticles[index] = { id: 'project', title: 'Mes projets', content: 'Description de l\'article 6.' };
+            newArticles[index] = { id: 'project', title: 'Mes projets', content: 'Découvrez les différents projets de développement fait' };
             break;
           case 'project':
             newArticles[index] = { id: 'biographie', title: 'Qui suis-je ?', content: 'Découvrez qui je suis, ma personnalité, mon github, mon numéro de téléphone, etc...' };
