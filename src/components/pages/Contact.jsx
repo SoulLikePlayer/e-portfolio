@@ -1,84 +1,121 @@
-import React, { useState } from "react";
+import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 import "../../styles/page/Contact.css";
-import {motion} from "framer-motion";
-
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    nom: "",
-    prenom: "",
-    email: "",
-    entreprise: "",
-    objet: "",
-    message: ""
+  const formik = useFormik({
+    initialValues: {
+      nom: "",
+      prenom: "",
+      email: "",
+      entreprise: "",
+      objet: "",
+      message: "",
+    },
+    validationSchema: Yup.object({
+      nom: Yup.string().required("Le nom est obligatoire"),
+      email: Yup.string()
+        .email("Adresse email invalide")
+        .required("L'email est obligatoire"),
+      message: Yup.string().required("Le message est obligatoire"),
+    }),
+    onSubmit: (values, { resetForm }) => {
+      emailjs
+        .send('service_alokbam', "template_tu0o3w8", values, 'LFlDCU3TiUNNJfMx9')
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("Message envoyé avec succès!");
+            resetForm();
+          },
+          (error) => {
+            console.log(error.text);
+            alert("Une erreur s'est produite, veuillez réessayer plus tard.");
+          }
+        );
+    },
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!formData.nom || !formData.email || !formData.message) {
-      alert("Veuillez remplir les champs obligatoires: Nom, Email et Message");
-      return;
-    }
-
-    emailjs.send('service_alokbam', "template_tu0o3w8", formData, 'LFlDCU3TiUNNJfMx9')
-      .then((result) => {
-        console.log(result.text);
-        alert("Message envoyé avec succès!");
-        setFormData({
-          nom: "",
-          prenom: "",
-          email: "",
-          entreprise: "",
-          objet: "",
-          message: ""
-        });
-      }, (error) => {
-        console.log(error.text);
-        alert("Une erreur s'est produite, veuillez réessayer plus tard.");
-      });
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
   return (
-    <motion.div className="contact-container"
-    initial={{ opacity: 0, filter: 'blur(10px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}>
+    <motion.div
+      className="contact-container"
+      initial={{ opacity: 0, filter: "blur(10px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      exit={{ opacity: 0, filter: "blur(10px)" }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+    >
       <h2 id="contact">Contactez-moi</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={formik.handleSubmit}>
         <label>
           Nom <span>*</span>:
-          <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />
+          <input
+            type="text"
+            name="nom"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.nom}
+          />
+          {formik.touched.nom && formik.errors.nom ? (
+            <div className="error">{formik.errors.nom}</div>
+          ) : null}
         </label>
         <label>
           Prénom:
-          <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} />
+          <input
+            type="text"
+            name="prenom"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.prenom}
+          />
         </label>
         <label>
           Email <span>*</span>:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          <input
+            type="email"
+            name="email"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <div className="error">{formik.errors.email}</div>
+          ) : null}
         </label>
         <label>
           Entreprise:
-          <input type="text" name="entreprise" value={formData.entreprise} onChange={handleChange} />
+          <input
+            type="text"
+            name="entreprise"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.entreprise}
+          />
         </label>
         <label>
           Objet:
-          <input type="text" name="objet" value={formData.objet} onChange={handleChange} />
+          <input
+            type="text"
+            name="objet"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.objet}
+          />
         </label>
         <label>
           Message <span>*</span>:
-          <textarea name="message" value={formData.message} onChange={handleChange} required />
+          <textarea
+            name="message"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.message}
+          />
+          {formik.touched.message && formik.errors.message ? (
+            <div className="error">{formik.errors.message}</div>
+          ) : null}
         </label>
         <button type="submit">Envoyer</button>
       </form>

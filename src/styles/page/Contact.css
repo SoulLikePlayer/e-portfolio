@@ -1,67 +1,78 @@
 /* Contact.css */
 
 .contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color:black;
-  }
-  
-  .contact-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .contact-container label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  .contact-container input[type="text"],
-  .contact-container input[type="email"],
-  .contact-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .contact-container textarea {
-    min-height: 150px;
-  }
-  
-  .contact-container button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .contact-container button:hover {
-    background-color: #0056b3;
-  }
-
-  .contact-container span {
-    color: red;
-    font-weight: bold;
-  }
-  
-.contact-container input[type="text"]:focus,
-.contact-container input[type="email"]:focus,
-.contact-container textarea:focus,
-.contact-container button:focus {
-    outline: none;
-    border-color: var(--primary-color-hover);
-    box-shadow: 0 0 5px var(--primary-color-hover);
-    background-color: #eef7ff; 
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  color: #333;
+  transition: all 0.3s ease-in-out;
 }
 
+.contact-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #007bff;
+}
+
+.contact-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-container textarea {
+  min-height: 150px;
+}
+
+.contact-container input[type="text"]:focus,
+.contact-container input[type="email"]:focus,
+.contact-container textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  background-color: #eef7ff;
+}
+
+.contact-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-container button:hover {
+  background-color: #0056b3;
+}
+
+.contact-container span {
+  color: red;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
