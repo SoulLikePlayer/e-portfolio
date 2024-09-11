@@ -1,120 +1,166 @@
-/* Conteneur principal pour la biographie */
-.biography-container {
-  border-radius: 10px;
-  max-width: 900px;
+/* Section globale pour la biographie */
+.biography-section {
+  max-width: 1000px;
   margin: 40px auto;
-  padding: 30px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
+  padding: 40px;
+  background-color: #f7f9fc;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Section d'introduction */
-.intro-section {
+/* Header de la biographie */
+.biography-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Avatar profil */
+.avatar-container {
   margin-bottom: 20px;
 }
 
-.biography-title {
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Texte d'introduction */
+.name-title {
   font-size: 36px;
   font-weight: 700;
-  color: #222;
-  margin: 0;
+  color: #2c3e50;
+  margin-bottom: 10px;
 }
 
-.tagline {
-  font-size: 20px;
-  color: #555;
-  margin-top: 10px;
+.role {
+  font-size: 22px;
+  color: #3498db;
+  margin-bottom: 20px;
 }
 
-/* Contenu de la biographie */
-.biography-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-/* Détails de la biographie */
-.bio-details {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.bio-text {
+.description {
   font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+/* Boutons d'action */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #3498db;
+  color: #3498db;
+}
+
+.btn-secondary:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Section détails de la biographie */
+.biography-details {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.bio-paragraph {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 20px;
 }
 
 .contact-info {
-  margin-top: 20px;
+  margin-top: 30px;
+  padding-top: 20px;
   border-top: 1px solid #e0e0e0;
-  padding-top: 15px;
-  font-size: 16px;
 }
 
 .bio-link {
-  color: #007bff;
+  color: #3498db;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .bio-link:hover {
-  color: #0056b3;
+  color: #2980b9;
 }
 
 /* Responsive Design */
 @media (min-width: 768px) {
-  .biography-container {
-    max-width: 700px;
+  .biography-header {
+    flex-direction: row;
+    text-align: left;
   }
 
-  .bio-text {
+  .intro-text {
+    max-width: 600px;
+  }
+
+  .role {
+    margin-left: 20px;
+  }
+
+  .description{
+    margin-left: 10px;
+  }
+
+  .bio-paragraph {
     font-size: 17px;
-  }
-
-  .contact-info {
-    font-size: 15px;
   }
 }
 
 @media (min-width: 1024px) {
-  .biography-container {
-    max-width: 900px;
+  .biography-section {
+    max-width: 1200px;
   }
 
-  .biography-title {
+  .name-title {
     font-size: 42px;
   }
 
-  .bio-text {
+  .bio-paragraph {
     font-size: 18px;
   }
-
-  .contact-info {
-    font-size: 16px;
-  }
-}
-
-.bio-button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 10px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.bio-button:hover {
-  background-color: #0056b3;
 }

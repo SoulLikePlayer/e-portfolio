@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "../../styles/composents/Carte.css";
 
+// Icone personnalisée pour le marqueur
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -18,11 +19,11 @@ const Carte = ({ position }) => {
       <MapContainer center={position} zoom={13} className="leaflet-container">
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; OpenStreetMap contributors'
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
         <Marker position={position}>
           <Popup>
-            Vous êtes ici.
+            <span>Vous êtes ici. Coordonnées : {position[0].toFixed(4)}, {position[1].toFixed(4)}</span>
           </Popup>
         </Marker>
       </MapContainer>

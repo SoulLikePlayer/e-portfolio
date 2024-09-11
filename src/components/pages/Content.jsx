@@ -8,13 +8,10 @@ import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 import { articlesData } from '../data/article';
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
-import { useMediaQuery } from 'react-responsive';
 
 function Content({ onContentChange }) {
   const [articles, setArticles] = useState(articlesData);
   const [transitioning, setTransitioning] = useState(null);
-  const [showConfetti, setShowConfetti] = useState(false);
-  const isSmallScreen = useMediaQuery({ query: '(max-width: 768px)' });
 
   useEffect(() => {
     const neonBorders = document.querySelectorAll('.neon-border');
@@ -51,65 +48,154 @@ function Content({ onContentChange }) {
     return () => clearInterval(colorInterval);
   }, []);
 
-  const toggleArticleContent = (index) => {
+  const toggleArticleContent = (index, direction = 'down') => {
     setTransitioning(index);
-    setShowConfetti(true);
     setTimeout(() => {
       setArticles((prevArticles) => {
         const newArticles = [...prevArticles];
         const currentArticle = newArticles[index];
 
-        switch (currentArticle.id) {
-          case 'biographie':
-            newArticles[index] = {
-              id: 'competence',
-              title: 'Mes compétences',
-              content: 'Découvrez les différentes compétences acquises au fil de mes expériences.',
-            };
-            break;
-          case 'competence':
-            newArticles[index] = {
-              id: 'project',
-              title: 'Mes projets',
-              content: 'Découvrez les différents projets de développement réalisés.',
-            };
-            break;
-          case 'project':
-            newArticles[index] = {
-              id: 'biographie',
-              title: 'Qui suis-je ?',
-              content: 'Découvrez qui je suis, ma personnalité, mon GitHub, mon numéro de téléphone, etc...',
-            };
-            break;
-          case 'etude':
-            newArticles[index] = {
-              id: 'parcours',
-              title: 'Mon Parcours',
-              content: 'Découvrez mon parcours à travers une frise chronologique.',
-            };
-            break;
-          case 'parcours':
-            newArticles[index] = {
-              id: 'localisation',
-              title: 'Où je vis ?',
-              content: 'Découvrez ma localisation.',
-            };
-            break;
-          case 'localisation':
-            newArticles[index] = {
-              id: 'etude',
-              title: 'Que fais-je ?',
-              content: 'Découvrez mes études et recherches en cours.',
-            };
-            break;
-          default:
-            break;
+        if (direction === 'down') {
+          switch (currentArticle.id) {
+            case 'biographie':
+              newArticles[index] = {
+                id: 'competence',
+                title: 'Mes compétences',
+                content: 'Découvrez les différentes compétences acquises au fil de mes expériences.',
+              };
+              break;
+            case 'competence':
+              newArticles[index] = {
+                id: 'project',
+                title: 'Mes projets',
+                content: 'Découvrez les différents projets de développement réalisés.',
+              };
+              break;
+            case 'project':
+              newArticles[index] = {
+                id: 'biographie',
+                title: 'Qui suis-je ?',
+                content: 'Découvrez qui je suis, ma personnalité, mon GitHub, mon numéro de téléphone, etc...',
+              };
+              break;
+            case 'etude':
+              newArticles[index] = {
+                id: 'parcours',
+                title: 'Mon Parcours',
+                content: 'Découvrez mon parcours à travers une frise chronologique.',
+              };
+              break;
+            case 'parcours':
+              newArticles[index] = {
+                id: 'localisation',
+                title: 'Où je vis ?',
+                content: 'Découvrez ma localisation.',
+              };
+              break;
+            case 'localisation':
+              newArticles[index] = {
+                id: 'etude',
+                title: 'Mes études actuelles', 
+                content: 'Découvrez les formations et diplômes que je poursuis actuellement, ainsi que les compétences développées à travers mes études.',
+              };
+              break;
+            case 'hobbit':
+              newArticles[index] = {
+                id: 'valeurs',
+                title: 'Mes valeurs',
+                content: 'Découvrez mes valeurs morales, ma définition de la motivation'
+              };
+              break;
+            case 'valeurs': 
+              newArticles[index] = {
+                id: 'reve',
+                title: 'Mon rêve',
+                content: 'Découvrez mes différent rêve, but et objectif'
+              };
+              break
+            case 'reve':
+              newArticles[index] = { 
+                id: 'hobbit', 
+                title: 'Mes passions', 
+                content: 'Description de l\'article 3.' 
+              };
+              break;
+            default:
+              break;  
+          }
+        } else if (direction === 'up') {
+          switch (currentArticle.id) {
+            case 'competence':
+              newArticles[index] = {
+                id: 'biographie',
+                title: 'Qui suis-je ?',
+                content: 'Découvrez qui je suis, ma personnalité, mon GitHub, mon numéro de téléphone, etc...',
+              };
+              break;
+            case 'project':
+              newArticles[index] = {
+                id: 'competence',
+                title: 'Mes compétences',
+                content: 'Découvrez les différentes compétences acquises au fil de mes expériences.',
+              };
+              break;
+            case 'biographie':
+              newArticles[index] = {
+                id: 'project',
+                title: 'Mes projets',
+                content: 'Découvrez les différents projets de développement réalisés.',
+              };
+              break;
+            case 'parcours':
+              newArticles[index] = {
+                id: 'etude',
+                title: 'Mes études actuelles', 
+                content: 'Découvrez les formations et diplômes que je poursuis actuellement, ainsi que les compétences développées à travers mes études.',
+              };
+              break;
+            case 'localisation':
+              newArticles[index] = {
+                id: 'parcours',
+                title: 'Mon Parcours',
+                content: 'Découvrez mon parcours à travers une frise chronologique.',
+              };
+              break;
+            case 'etude':
+              newArticles[index] = {
+                id: 'localisation',
+                title: 'Où je vis ?',
+                content: 'Découvrez ma localisation.',
+              };
+              break;
+            case 'hobbit':
+              newArticles[index] = {
+                id: 'reve',
+                title: 'Mon rêve',
+                content: 'Découvrez mes différent rêve, but et objectif'
+              };
+              break;             
+            case 'valeurs': 
+              newArticles[index] = { 
+                id: 'hobbit', 
+                title: 'Mes passions', 
+                content: 'Description de l\'article 3.' 
+              };
+              break;  
+            case 'reve':
+              newArticles[index] = {
+                id: 'valeurs',
+                title: 'Mes valeurs',
+                content: 'Découvrez mes valeurs morales, ma définition de la motivation'
+              };
+              break;
+            default:
+              break;
+          }
         }
         return newArticles;
       });
       setTransitioning(null);
-      setShowConfetti(false);
-    }, 500); // Transition duration
+    }, 500); // Durée de la transition
   };
 
   const handleArticleClick = (index) => {
@@ -152,6 +238,15 @@ function Content({ onContentChange }) {
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}
             >
+              {/* Flèche vers le haut (au-dessus de l'article) */}
+              <button
+                className="up-arrow"
+                onClick={() => toggleArticleContent(index, 'up')}
+                style={{ marginBottom: '10px', color: 'var(--neon-color-1)' }}
+              >
+                <FaArrowUp />
+              </button>
+
               <div
                 className={`bg-white p-4 rounded shadow-md neon-border animated-article article${index + 1} h-full ${
                   transitioning === index ? 'article-hidden' : ''
@@ -159,15 +254,18 @@ function Content({ onContentChange }) {
                 data-content={article.id}
                 onClick={() => handleArticleClick(index)}
               >
-                <h2 className="text-xl font-semibold text-gray-800 mb-2 titre">{article.title}</h2>
+                <h2 className="text-xl font-semibold text-gray-800 mb-2">{article.title}</h2>
                 <div className="article-content">
                   <p className="text-gray-600">{article.content}</p>
                 </div>
               </div>
+
+              {/* Flèche vers le bas (sous l'article) */}
               <button
                 id={`switch-article${index + 1}`}
                 className="down-arrow"
-                onClick={() => toggleArticleContent(index)}
+                onClick={() => toggleArticleContent(index, 'down')}
+                style={{ marginTop: '10px', color: 'var(--neon-color-2)' }}
               >
                 <FaArrowDown />
               </button>

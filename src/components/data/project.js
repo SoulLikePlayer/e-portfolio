@@ -5,12 +5,6 @@ export const projects = [
     "state": "Complete"
   },
   {
-    "title": "EvoDict",
-    "description": "EvoDict est une combinaison de Evolution Dictionnary...",
-    "github": "https://github.com/SoulLikePlayer/Evodict",
-    "state": "Error"
-  },
-  {
     "title": "E-Porfolio",
     "description": "Mon portfolio est une vitrine interactive de mes compétences...",
     "github": "https://github.com/SoulLikePlayer/e-portfolio",
@@ -45,5 +39,11 @@ export const projects = [
     "description": "Un site web sur le jeux vidéo Monster Hunter World",
     "github" : "https://github.com/SoulLikePlayer/MHW-Iceborn-Compendium",
     "state": "Waiting"
+  },
+  {
+    "title": "EvoPython",
+    "description" : "EvoPython est un projet visant a l'amélioration de certaine fonctionnalité python",
+    "github" : "https://github.com/SoulLikePlayer/EvoPython/tree/EvoList",
+    "state" : "Waiting"
   }
 ];

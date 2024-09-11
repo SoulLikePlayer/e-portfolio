@@ -1,43 +1,60 @@
+/* Styles du Header */
 .custom-header {
   position: sticky;
   top: 0;
-  z-index: 90;
-  transition: color 0.3s ease;
-  background-color: var(--header-bg-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  z-index: 99;
+  background: linear-gradient(135deg, var(--header-bg-color), var(--header-bg-color-darker));
+  box-shadow: 0 0 15px var(--shadow-color); /* Réduit la taille de l'ombre par défaut */
+  backdrop-filter: blur(15px);
+  transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
+/* Styles pour la marque */
 .navbar-brand {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--primary-color);
   display: flex;
   align-items: center;
+  /* Retire text-shadow par défaut */
 }
 
-.navbar-brand .brand-icon {
-  margin-right: 8px;
+/* Animation du logo */
+.brand-icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
 }
 
+/* Styles pour les liens */
 .nav-link {
-  font-size: 1.2rem;
-  margin: 0 10px;
-  transition: color 0.3s ease;
+  font-size: 1.4rem;
+  margin: 0 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
   color: var(--link-color);
+  /* Retire text-shadow par défaut */
 }
 
 .nav-link:hover {
   color: var(--link-hover-color);
+  /* Retire text-shadow et transform par défaut */
+  transform: translateY(-5px);
 }
 
-.menu-icon {
+/* Styles pour les icônes */
+.nav-icon {
   font-size: 1.5rem;
-  color: var(--link-color);
-  transition: transform 0.3s ease;
+  margin-right: 0.5rem;
 }
 
-/* Animation du hamburger menu */
+/* Styles pour l'icône du menu */
+.menu-icon {
+  font-size: 2rem;
+  color: var(--link-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
 .navbar-toggler {
   border: none;
   background: none;
@@ -46,97 +63,50 @@
 
 .navbar-toggler.open .menu-icon {
   transform: rotate(90deg);
+  color: var(--neon-color-1);
 }
 
+/* Styles pour la barre de recherche */
+.search-bar {
+  margin: 0 20px;
+}
+
+.search-icon {
+  color: var(--link-color);
+}
+
+/* Styles pour le bouton de changement de thème */
 .theme-toggle {
   display: flex;
   align-items: center;
-  position: relative;
+  margin-left: auto;
 }
 
-.theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.theme-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.theme-toggle-button {
   background-color: var(--slider-bg);
-  transition: 0.4s;
-  border-radius: 34px;
-  display: flex;
-  align-items: center;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: var(--slider-thumb-bg);
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: var(--slider-checked-bg);
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.theme-icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
+  border: 2px solid var(--slider-checked-bg);
   color: var(--slider-icon-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-color-1); /* Réduit la taille de l'ombre par défaut */
 }
 
-
-.theme-icon.sun{
-  left: 8px;
+/* Mode sombre */
+body.dark .custom-header {
+  box-shadow: 0 0 30px var(--shadow-color); /* Ombre plus grande en mode sombre */
 }
 
-.theme-icon.moon{
-  right: 8px;
+body.dark .navbar-brand {
+  text-shadow: 0 0 10px var(--neon-color-1); /* Ajoute l'effet de néon en mode sombre */
 }
 
-/* Thèmes */
-body.light {
-  --header-bg-color: #f1f1f1;
-  --primary-color: #333;
-  --link-color: #333;
-  --link-hover-color: #ffc107;
-  --slider-bg: #ddd; /* Gris clair pour le fond du slider */
-  --slider-checked-bg: #333; /* Noir pour le fond du slider quand activé */
-  --slider-thumb-bg: #fff; /* Blanc pour le cercle */
-  --slider-icon-color: #333; /* Noir pour l'icône */
+body.dark .nav-link {
+  text-shadow: 0 0 10px var(--neon-color-2); /* Ajoute l'effet de néon en mode sombre */
 }
 
-body.dark {
-  --header-bg-color: #333;
-  --primary-color: #f1f1f1;
-  --link-color: #f1f1f1;
-  --link-hover-color: #ffc107;
-  --slider-bg: #555; /* Gris foncé pour le fond du slider */
-  --slider-checked-bg: #ddd; /* Gris clair pour le fond du slider quand activé */
-  --slider-thumb-bg: #333; /* Gris foncé pour le cercle */
-  --slider-icon-color: #fff; /* Blanc pour l'icône */
+body.dark .nav-link:hover {
+  text-shadow: 0 0 20px var(--neon-color-2); /* Augmente l'effet de néon en mode sombre */
+}
+
+body.dark .theme-toggle-button {
+  box-shadow: 0 0 15px var(--neon-color-1); /* Augmente l'effet de néon en mode sombre */
 }

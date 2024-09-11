@@ -2,12 +2,17 @@
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.5s ease, transform 0.5s ease;
-  padding: 20px;
-  margin-bottom: 20px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  min-height: 200px; 
+  max-height: 250px; 
+  overflow: hidden;
+  padding: 10px; 
 }
+
 
 .article-hidden {
   opacity: 0;
@@ -19,6 +24,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #333333;
+  text-align: center;
 }
 
 .animated-article p {
@@ -118,3 +124,52 @@
   transition: transform 0.3s ease;
 }
 
+.animated-article:hover .article-content {
+  display: block;
+}
+
+.animated-article + .down-arrow {
+  margin-top: 10px;
+}
+
+/* Flèches vers le bas */
+.down-arrow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  font-size: 30px; /* Augmenter la taille de la flèche */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.down-arrow:hover {
+  color: #007bff; /* Change color on hover */
+  transform: scale(1.3); /* Améliorer l'effet de hover */
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); /* Effet néon au hover */
+}
+
+/* Flèches vers le haut */
+.up-arrow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  font-size: 30px; /* Même taille que la flèche vers le bas */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.up-arrow:hover {
+  color: #007bff; /* Même effet que la flèche vers le bas */
+  transform: scale(1.3);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}

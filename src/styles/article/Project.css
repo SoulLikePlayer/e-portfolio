@@ -1,0 +1,71 @@
+.square .project {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.square .project h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.square .project p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.project-page {
+  padding: 20px;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.legend-container {
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.legend-color {
+  width: 5%;
+  height: 10px;
+  margin-right: 10px;
+}
+
+.legend-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+#error-color {
+  background-color: #FFCCCC;
+}
+
+#waiting-color {
+  background-color: #FFF4CC;
+}
+
+#complete-color {
+  background-color: #DFF2BF;
+}

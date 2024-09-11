@@ -3,6 +3,7 @@
 .contact-container {
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 5%;
   padding: 30px;
   background-color: #ffffff;
   border-radius: 12px;
@@ -70,7 +71,7 @@
   font-weight: bold;
 }
 
-.error-message {
+.error-message{
   color: #ff4d4f;
   font-size: 0.875rem;
   margin-top: -10px;

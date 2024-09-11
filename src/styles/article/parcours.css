@@ -1,48 +1,100 @@
-.parcours-container {
-  width: 100%;
+/* Container principal pour la page du parcours */
+.parcours-page {
+  position: relative;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 30px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* Titre principal de la section */
+.parcours-title {
+  font-size: 2.5rem;
+  color: #0d6efd;
+  margin-bottom: 30px;
+}
+
+/* Chrono customisé */
 .chrono-icons {
-  display: none;
+  display: none; /* Masquer les icônes */
 }
 
 .chrono-timeline {
-  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .chrono-card {
+  background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
+  padding: 15px;
 }
 
 .chrono-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Titre dans la chronologie */
 .chrono-title {
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 10px;
   color: #0d6efd;
 }
 
+/* Sous-titres */
 .chrono-subtitle {
   font-weight: 500;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-bottom: 8px;
   color: #495057;
 }
 
+/* Description des événements */
 .chrono-description {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 0.9rem;
+  line-height: 1.7;
   color: #212529;
+}
+
+/* Amélioration des tailles et des marges pour les appareils mobiles */
+@media (max-width: 768px) {
+  .parcours-page {
+    padding: 20px;
+  }
+
+  .parcours-title {
+    font-size: 2rem;
+  }
+
+  .chrono-card {
+    padding: 10px;
+  }
+
+  .chrono-title {
+    font-size: 1.2rem;
+  }
+
+  .chrono-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .parcours-page {
+    padding: 15px;
+  }
+
+  .chrono-title {
+    font-size: 1.2rem;
+  }
+
+  .chrono-description {
+    font-size: 0.85rem;
+  }
 }
