@@ -254,7 +254,7 @@ function Content({ onContentChange }) {
                 data-content={article.id}
                 onClick={() => handleArticleClick(index)}
               >
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">{article.title}</h2>
+                <h2 className="text-xl font-semibold text-gray-800">{article.title}</h2>
                 <div className="article-content">
                   <p className="text-gray-600">{article.content}</p>
                 </div>

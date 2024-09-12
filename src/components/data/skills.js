@@ -18,9 +18,7 @@ export const ComputerSkills = [
 ];
 
 export const WorkingSkill = [
-  "Empathique/Ecoute active",
+  "Ecoute active",
   "Art oratoire",
-  "Ouvert à la critique",
   "Critique Constructive",
-  "Franc"
 ]

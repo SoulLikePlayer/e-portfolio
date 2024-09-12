@@ -4,8 +4,8 @@
   top: 0;
   z-index: 99;
   background: linear-gradient(135deg, var(--header-bg-color), var(--header-bg-color-darker));
-  box-shadow: 0 0 15px var(--shadow-color); /* Réduit la taille de l'ombre par défaut */
-  backdrop-filter: blur(15px);
+  box-shadow: 0 0 10px var(--shadow-color);
+  backdrop-filter: blur(10px);
   transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -16,7 +16,6 @@
   color: var(--primary-color);
   display: flex;
   align-items: center;
-  /* Retire text-shadow par défaut */
 }
 
 /* Animation du logo */
@@ -30,16 +29,14 @@
 /* Styles pour les liens */
 .nav-link {
   font-size: 1.4rem;
-  margin: 0 20px;
+  margin: 0 15px;
   transition: color 0.3s ease, transform 0.3s ease;
   color: var(--link-color);
-  /* Retire text-shadow par défaut */
 }
 
 .nav-link:hover {
   color: var(--link-hover-color);
-  /* Retire text-shadow et transform par défaut */
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 /* Styles pour les icônes */
@@ -63,16 +60,7 @@
 
 .navbar-toggler.open .menu-icon {
   transform: rotate(90deg);
-  color: var(--neon-color-1);
-}
-
-/* Styles pour la barre de recherche */
-.search-bar {
-  margin: 0 20px;
-}
-
-.search-icon {
-  color: var(--link-color);
+  color: var(--link-hover-color);
 }
 
 /* Styles pour le bouton de changement de thème */
@@ -87,26 +75,34 @@
   border: 2px solid var(--slider-checked-bg);
   color: var(--slider-icon-color);
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px var(--neon-color-1); /* Réduit la taille de l'ombre par défaut */
+  box-shadow: 0 0 5px var(--slider-checked-bg);
 }
 
-/* Mode sombre */
 body.dark .custom-header {
-  box-shadow: 0 0 30px var(--shadow-color); /* Ombre plus grande en mode sombre */
+  box-shadow: 0 0 25px var(--shadow-color);
+  background: linear-gradient(135deg, var(--header-bg-color), var(--header-bg-color-darker));
 }
 
 body.dark .navbar-brand {
-  text-shadow: 0 0 10px var(--neon-color-1); /* Ajoute l'effet de néon en mode sombre */
+  color: var(--primary-color);
+  text-shadow: 0 0 5px var(--neon-color-1);
 }
 
 body.dark .nav-link {
-  text-shadow: 0 0 10px var(--neon-color-2); /* Ajoute l'effet de néon en mode sombre */
+  color: var(--link-color);
+  text-shadow: 0 0 5px var(--neon-color-2);
 }
 
-body.dark .nav-link:hover {
-  text-shadow: 0 0 20px var(--neon-color-2); /* Augmente l'effet de néon en mode sombre */
+.theme-toggle-button.light {
+  background-color: var(--slider-bg);
+  border: 2px solid var(--slider-checked-bg);
+  color: var(--slider-icon-color);
+  box-shadow: 0 0 5px var(--slider-checked-bg);
 }
 
-body.dark .theme-toggle-button {
-  box-shadow: 0 0 15px var(--neon-color-1); /* Augmente l'effet de néon en mode sombre */
+.theme-toggle-button.dark {
+  background-color: var(--slider-bg);
+  border: 2px solid var(--slider-checked-bg);
+  color: var(--slider-icon-color);
+  box-shadow: 0 0 15px var(--neon-color-1);
 }

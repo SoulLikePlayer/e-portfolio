@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap');
+
 
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
   overflow: auto; 
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Exo', sans-serif; 
   background-color: var(--background-color);
 }
 
@@ -81,10 +83,10 @@ h2 {
   color: var(--neon-color-1);
   padding: 0.5em 1em;
   border-radius: 10px;
+  display: inline-block;
   }
 
 body.dark .eportfolio{
-  display: inline-block;
   border: 2px solid var(--neon-color-1);
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
   text-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.8);
@@ -174,6 +176,7 @@ body.light {
   --text-color: #333;
   --border-color: #007bff;
   --shadow-color: ;
+  cursor: auto;
 }
 
 /* Thème sombre */
@@ -181,7 +184,7 @@ body.dark {
   --header-bg-color: #111;
   --header-bg-color-darker: #000;
   --primary-color: #00ffcc;
-  --link-color: #00ffcc;
+  --link-color: #ff00ff;
   --link-hover-color: #ff0090;
   --slider-bg: #333;
   --slider-checked-bg: #00ffcc;
@@ -193,4 +196,5 @@ body.dark {
   --text-color: #e0e0e0;
   --border-color: #00ffcc;
   --shadow-color: rgba(0, 255, 255, 0.5);
+  cursor: crosshair;
 }

@@ -29,32 +29,32 @@ function Header({ toggleTheme, theme }) {
   };
 
   return (
-    <header className="custom-header">
-      <nav className="navbar navbar-expand-lg">
+    <header className={`custom-header ${theme}`}>
+      <nav className={`navbar navbar-expand-lg ${theme}`}>
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <motion.div 
-              className="brand-icon" 
+              className={`brand-icon ${theme}`}
               initial={{ rotate: 0 }}
               animate={{ rotate: 360 }}
               transition={{ duration: 10, repeat: Infinity }}
             >
               <FaCode />
             </motion.div>
-             Mon E-Portfolio
+            Mon E-Portfolio
           </Link>
           <button
-            className={`navbar-toggler ${isOpen ? 'open' : ''}`}
+            className={`navbar-toggler ${isOpen ? 'open' : ''} ${theme}`}
             type="button"
             onClick={handleNavbarToggle}
             aria-controls="navbarNav"
             aria-expanded={isOpen}
             aria-label="Toggle navigation"
           >
-            <FaBars className="menu-icon" />
+            <FaBars className={`menu-icon ${theme}`} />
           </button>
           <motion.div
-            className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}
+            className={`collapse navbar-collapse ${isOpen ? 'show' : ''} ${theme}`}
             id="navbarNav"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -30 }}
@@ -62,13 +62,13 @@ function Header({ toggleTheme, theme }) {
           >
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <Link className="nav-link navbar-brand" to="/">
-                  <FaHome title="Accueil" className="brand-icon" /> Accueil
+                <Link className={`nav-link ${theme}`} to="/">
+                  <FaHome title="Accueil" className={`nav-icon ${theme}`} /> Accueil
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link navbar-brand" to="/ContactMe">
-                  <FaEnvelope title="Contact" className="brand-icon" /> Contactez moi
+                <Link className={`nav-link ${theme}`} to="/ContactMe">
+                  <FaEnvelope title="Contact" className={`nav-icon ${theme}`} /> Contactez moi
                 </Link>
               </li>
             </ul>
@@ -77,7 +77,7 @@ function Header({ toggleTheme, theme }) {
                 variant="contained" 
                 onClick={toggleTheme} 
                 startIcon={theme === 'light' ? <FaMoon /> : <FaSun />}
-                className="theme-toggle-button"
+                className={`theme-toggle-button ${theme}`}
               >
                 {theme === 'light' ? 'Mode Sombre' : 'Mode Clair'}
               </Button>

@@ -7,8 +7,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
 
-  min-height: 200px; 
-  max-height: 250px; 
+  height: 150px !important; 
   overflow: hidden;
   padding: 10px; 
 }
@@ -21,10 +20,11 @@
 
 .animated-article h2 {
   margin-top: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #333333;
   text-align: center;
+  transition: font-size 0.3s ease, margin-top 0.3s ease;
 }
 
 .animated-article p {
@@ -117,6 +117,12 @@
   .switch-button {
       margin-top: 10px;
   }
+}
+
+.animated-article:hover h2 {
+  font-size: 1.2rem; 
+  margin-top: 0; 
+  transform: translateY(-10px);
 }
 
 .animated-article:hover {
