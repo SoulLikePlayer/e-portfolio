@@ -5,7 +5,6 @@
   border-radius: 15px;
   max-width: 1400px;
   margin: 0 auto;
-
   box-shadow: var(--article-container-box-shadow);
   background-color: var(--article-container-bg-color);
 }
@@ -17,85 +16,85 @@
   margin-bottom: 30px;
 }
 
-/* Chrono customisé */
-.chrono-icons {
-  display: none; /* Masquer les icônes */
-}
-
-.chrono-timeline {
-  width: 100%;
-  margin-top: 20px;
-}
-
-.chrono-card {
-  background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  padding: 15px;
-}
-
-.chrono-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Titre dans la chronologie */
-.chrono-title {
-  font-weight: 400;
-  font-size: 1rem;
-  margin-bottom: 10px;
+/* Styles de la timeline */
+.vertical-timeline-element-title {
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #0d6efd;
 }
 
-/* Sous-titres */
-.chrono-subtitle {
+.vertical-timeline-element-subtitle {
+  font-size: 1.2rem;
   font-weight: 500;
-  font-size: 1rem;
-  margin-bottom: 8px;
   color: #495057;
 }
 
-/* Description des événements */
-.chrono-description {
-  font-size: 0.9rem;
-  line-height: 1.7;
+.vertical-timeline-element p {
+  font-size: 1rem;
   color: #212529;
+  line-height: 1.6;
 }
 
-/* Amélioration des tailles et des marges pour les appareils mobiles */
+/* Sous-événements */
+.sub-items {
+  margin-top: 15px;
+}
+
+.sub-item h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 5px;
+}
+
+.sub-item p {
+  font-size: 0.9rem;
+  color: #212529;
+  line-height: 1.5;
+}
+
+/* Styles des cartes lors du survol */
+.vertical-timeline-element--education:hover .vertical-timeline-element-content {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .parcours-page {
-    padding: 20px;
-  }
-
   .parcours-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  .chrono-card {
-    padding: 10px;
-  }
-
-  .chrono-title {
+  .vertical-timeline-element-title {
     font-size: 1.2rem;
   }
 
-  .chrono-description {
-    font-size: 0.85rem;
+  .vertical-timeline-element-subtitle {
+    font-size: 1rem;
+  }
+
+  .vertical-timeline-element p,
+  .sub-item p {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .parcours-page {
-    padding: 15px;
+  .parcours-title {
+    font-size: 1.6rem;
   }
 
-  .chrono-title {
-    font-size: 1.2rem;
+  .vertical-timeline-element-title {
+    font-size: 1rem;
   }
 
-  .chrono-description {
+  .vertical-timeline-element-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .vertical-timeline-element p,
+  .sub-item p {
     font-size: 0.85rem;
   }
 }
