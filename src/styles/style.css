@@ -5,7 +5,8 @@
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
   overflow: auto; 
-  font-family: 'Exo', sans-serif; 
+  overflow-x: hidden;
+  font-family: 'Exo', sans-serif !important; 
   background-color: var(--background-color);
 }
 
@@ -15,6 +16,7 @@ body.no-scroll {
 
 .square {
   overflow-y: auto; 
+  overflow-x: auto;
 }
 
 .square.show {
@@ -51,7 +53,7 @@ main .grid {
   pointer-events: none;
 }
 
-h2 {
+h2:not(){
   margin: 0;
   padding: 0;
   font-size: 24px;
@@ -84,7 +86,7 @@ h2 {
   padding: 0.5em 1em;
   border-radius: 10px;
   display: inline-block;
-  }
+}
 
 body.dark .eportfolio{
   border: 2px solid var(--neon-color-1);
@@ -95,18 +97,19 @@ body.dark .eportfolio{
 
 body.dark .eportfolio::before {
   content: '»';
-  font-size: calc(2rem + 2vw);
+  font-size: calc(4rem + 5vw); /* Augmenter la taille */
   color: var(--neon-color-2);
   position: absolute;
-  left: -2rem;
-  top: 50%;
-  transform: translateY(-50%);
+  left: -2.5rem; /* Ajuster la position horizontale */
+  top: 35%;
+  transform: translateY(-50%); /* Centrer verticalement */
 }
+
 
 .eportfolio p {
   margin: 0;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -176,13 +179,14 @@ body.light {
   --text-color: #333;
   --border-color: #007bff;
   --shadow-color: ;
-  cursor: auto;
+  --contact-h2-color : #007bff;
+  --contact-h2-submit-hover : #0056b3;
 }
 
 /* Thème sombre */
 body.dark {
-  --header-bg-color: #111;
-  --header-bg-color-darker: #000;
+  --header-bg-color: #001f3f;
+  --header-bg-color-darker: #001427;
   --primary-color: #00ffcc;
   --link-color: #ff00ff;
   --link-hover-color: #ff0090;
@@ -192,9 +196,10 @@ body.dark {
   --slider-icon-color: #f1f1f1;
   --neon-color-1: #00ffcc;
   --neon-color-2: #ff00ff;
-  --background-color: #000;
-  --text-color: #e0e0e0;
+  --background-color: #001f3f; /* Noir bleuté */
+  --text-color: #b8b7b7;
   --border-color: #00ffcc;
   --shadow-color: rgba(0, 255, 255, 0.5);
-  cursor: crosshair;
+  --contact-h2-color : #ff00ff;
+  --contact-h2-submit-hover : #e900e9;
 }

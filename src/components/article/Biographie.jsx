@@ -26,10 +26,9 @@ const Biographie = () => {
       <div className="biography-details">
         <h2 className="section-title">À propos de moi</h2>
         <p className="bio-paragraph">
-          Je suis {data.name}, développeur full stack avec une solide expertise en création d'applications web performantes. Ma spécialité est d'intégrer front-end et back-end avec des frameworks comme React, Node.js, et bien d'autres. 
-        </p>
+          Je suis {data.name}, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat rhoncus tincidunt. In posuere maximus diam vitae rutrum. Mauris gravida odio non nibh cursus, ut eleifend eros consequat. Curabitur id ullamcorper enim. Suspendisse tempus felis non maximus finibus. Cras eget urna elit. Vestibulum aliquet mi id libero luctus, quis ornare enim feugiat. Donec velit sem, imperdiet pulvinar nibh vitae, consequat dictum massa. Quisque posuere dapibus diam. In vitae massa ut tellus luctus bibendum. Vivamus ac urna et eros cursus maximus et at odio. Nulla eu augue vitae leo bibendum semper ut ac augue. Suspendisse ac accumsan ex. </p>
         <p className="bio-paragraph">
-          J'ai eu la chance de travailler sur des projets variés, allant de sites vitrines aux plateformes d'entreprise complexes. J'attache une importance particulière à la qualité du code et à l'expérience utilisateur.
+          Maecenas eu sollicitudin neque. Sed pharetra porttitor gravida. Suspendisse semper lectus nec vulputate accumsan. Phasellus consectetur pellentesque sem. Cras et eros in lorem accumsan tincidunt sed at eros. Etiam accumsan est in ante sodales cursus. Phasellus feugiat magna in ligula venenatis vehicula. Nunc sed fringilla justo, vel vestibulum purus. Integer quis luctus ipsum, quis lacinia lectus. Phasellus placerat, risus sed aliquet finibus, urna leo feugiat nulla, ac faucibus enim ipsum a augue. 
         </p>
         <div className="contact-info">
           <p>Email: <a href={`mailto:${data.email}`} className="bio-link">{data.email}</a></p>

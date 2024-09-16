@@ -46,7 +46,7 @@ function Content({ onContentChange }) {
     const colorInterval = setInterval(changeNeonColors, 50);
 
     return () => clearInterval(colorInterval);
-  }, []);
+  }, []); // Le tableau de dépendances est vide, donc cet effet s'exécute une seule fois
 
   const toggleArticleContent = (index, direction = 'down') => {
     setTransitioning(index);
@@ -195,7 +195,7 @@ function Content({ onContentChange }) {
         return newArticles;
       });
       setTransitioning(null);
-    }, 500); // Durée de la transition
+    }, 500);
   };
 
   const handleArticleClick = (index) => {
@@ -217,7 +217,7 @@ function Content({ onContentChange }) {
         <p className="text-gray-400">
           <span>Découvrez </span>
           <Typewriter
-            words={['mon parcours', 'mes compétences', 'mes projets', 'mon profil']}
+            words={['mon parcours', 'mes compétences', 'mes projets', 'mon profil', 'mes rêves', 'mes passions']}
             loop={true}
             cursor
             cursorStyle="|"

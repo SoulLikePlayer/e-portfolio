@@ -1,6 +1,3 @@
-/* This code snippet is a React component named `ProjectCarousel`. It is using the React library along
-with the `Carousel` component from the `react-responsive-carousel` library to create a carousel of
-projects. */
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -14,9 +11,9 @@ const ProjectCarousel = ({ projects }) => {
       showStatus={false} 
       infiniteLoop={true} 
       autoPlay={true} 
-      interval={5000} /* Réglage du temps d'attente */
-      transitionTime={800} /* Transition plus fluide */
-      swipeable={true} /* Swipe pour mobile */
+      interval={6000} /* Ajusté pour une transition plus douce */
+      transitionTime={700} /* Une transition fluide */
+      swipeable={true} 
     >
       {projects.map((project, index) => {
         let stateClass = '';

@@ -1,10 +1,11 @@
 .carte-container {
     height: 400px;
-    width: 1000px;
+    max-width: 1000px;
     border: 2px solid #34495e;
     border-radius: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    align-items: center;
 }
 
 .leaflet-container {

@@ -6,7 +6,6 @@
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
-
   height: 150px !important; 
   overflow: hidden;
   padding: 10px; 
@@ -20,10 +19,11 @@
 
 .animated-article h2 {
   margin-top: 0;
-  font-size: 2rem;
+  font-size: calc(2rem + 0.5vw);
   font-weight: bold;
   color: #333333;
   text-align: center;
+  vertical-align: bottom !important;
   transition: font-size 0.3s ease, margin-top 0.3s ease;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .animated-article:hover h2 {
-  font-size: 1.2rem; 
+  font-size: 1.2rem !important; 
   margin-top: 0; 
   transform: translateY(-10px);
 }
@@ -148,7 +148,7 @@
   text-align: center;
   background-color: transparent;
   border: none;
-  font-size: 30px; /* Augmenter la taille de la flèche */
+  font-size: 1.5em !important; /* Augmenter la taille de la flèche */
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
 }

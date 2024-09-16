@@ -19,13 +19,3 @@
 .neon-border:hover {
   transform: scale(1.05);
 }
-
-.grid .neon-border h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.grid .neon-border p {
-  font-size: 1em;
-  color: var(--text-color);
-}

@@ -38,6 +38,10 @@
   padding: 20px;
   box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.3);
   cursor: auto;
+
+  /*Paramètre Couleur*/
+  --article-container-bg-color : #f7f9fc;
+  --article-container-box-shadow : 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .square.show {

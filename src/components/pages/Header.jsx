@@ -33,15 +33,21 @@ function Header({ toggleTheme, theme }) {
       <nav className={`navbar navbar-expand-lg ${theme}`}>
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
+          {theme === 'dark' ? (
             <motion.div 
               className={`brand-icon ${theme}`}
               initial={{ rotate: 0 }}
               animate={{ rotate: 360 }}
               transition={{ duration: 10, repeat: Infinity }}
-            >
+            >               
               <FaCode />
             </motion.div>
-            Mon E-Portfolio
+            ): (
+            <div>
+              <FaCode />
+            </div>
+          )}
+            <span className="name"> Louis LAZARE</span>
           </Link>
           <button
             className={`navbar-toggler ${isOpen ? 'open' : ''} ${theme}`}

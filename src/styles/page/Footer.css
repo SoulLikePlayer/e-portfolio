@@ -1,5 +1,6 @@
 footer {
-  background-color: var(--header-bg-color);
+  background: linear-gradient(135deg, var(--header-bg-color), var(--header-bg-color-darker));
+  box-shadow: 0 0 10px var(--shadow-color);
   color: var(--primary-color);
   padding: 20px 0;
   text-align: center;

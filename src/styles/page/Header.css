@@ -43,6 +43,7 @@
 .nav-icon {
   font-size: 1.5rem;
   margin-right: 0.5rem;
+  display: inline;
 }
 
 /* Styles pour l'icône du menu */
@@ -88,6 +89,17 @@ body.dark .navbar-brand {
   text-shadow: 0 0 5px var(--neon-color-1);
 }
 
+body.dark .name {
+  color: var(--link-color);
+  text-shadow: 0 0 5px var(--neon-color-2);
+}
+
+ body.dark .name:first-letter{
+  color: var(--primary-color);
+  text-shadow: 0 0 20 var(--neon-color-1);
+}
+
+
 body.dark .nav-link {
   color: var(--link-color);
   text-shadow: 0 0 5px var(--neon-color-2);
@@ -95,14 +107,12 @@ body.dark .nav-link {
 
 .theme-toggle-button.light {
   background-color: var(--slider-bg);
-  border: 2px solid var(--slider-checked-bg);
   color: var(--slider-icon-color);
-  box-shadow: 0 0 5px var(--slider-checked-bg);
 }
 
 .theme-toggle-button.dark {
   background-color: var(--slider-bg);
   border: 2px solid var(--slider-checked-bg);
-  color: var(--slider-icon-color);
+  color: var(--primary-color);
   box-shadow: 0 0 15px var(--neon-color-1);
 }

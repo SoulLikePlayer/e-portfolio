@@ -4,26 +4,30 @@
   max-width: 600px;
   margin: 0 auto;
   margin-top: 5%;
+  margin-bottom: 5%;
   padding: 30px;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 15px var(--primary-color);
   color: #333;
   transition: all 0.3s ease-in-out;
 }
-
 .contact-container h2 {
   text-align: center;
   margin-bottom: 25px;
   font-size: 1.8rem;
-  color: #007bff;
+  color: var(--contact-h2-color);
+}
+
+body.dark .contact-container h2{
+  text-shadow: 0 0 9px var(--contact-h2-color);
 }
 
 .contact-container label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
-  color: #555;
+  color: var(--primary-color);
 }
 
 .contact-container input[type="text"],
@@ -51,6 +55,11 @@
   background-color: #eef7ff;
 }
 
+body.dark .contact-container input,
+body.dark .contact-container textarea{
+  color : var(--text-color)
+}
+
 .contact-container button {
   background-color: #007bff;
   color: #fff;
@@ -63,7 +72,7 @@
 }
 
 .contact-container button:hover {
-  background-color: #0056b3;
+  background-color: var(--contact-h2-submit-hover);
 }
 
 .contact-container span {

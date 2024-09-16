@@ -1,12 +1,9 @@
 import React from 'react';
 import '../../styles/article/Competence.css';
-import { ComputerSkills , WorkingSkill } from '../data/skills';
+import { ComputerSkills  } from '../data/skills';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaJava, FaPhp, FaAngular } from 'react-icons/fa'; 
 import { SiRust, SiExpress, SiTailwindcss, SiFlask } from 'react-icons/si'; 
 import { BsBootstrap } from "react-icons/bs";
-
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const iconsMap = {
   HTML: <FaHtml5 color="#e34c26" />,
@@ -29,16 +26,6 @@ const Competences = () => {
   return (
     <section className="skills-section">
       <h2 className="skills-title">Mes Compétences</h2>
-        <Carousel 
-          className="project-carousel" 
-          showThumbs={false} 
-          showStatus={false} 
-          infiniteLoop={true} 
-          autoPlay={true} 
-          interval={5000} 
-          transitionTime={800}
-          swipeable={true}
-        >
           <div className="skills-grid">
             {ComputerSkills.map((skill) => (
               <div className="skill-card" key={skill}>
@@ -49,14 +36,6 @@ const Competences = () => {
               </div>
             ))}
           </div>
-          <div>
-            {WorkingSkill.map((skill) => (
-              <div className="skill-card">
-                <p className="skill-name">{skill}</p>
-              </div>
-            ))}
-          </div>
-      </Carousel>
     </section>
   );
 };

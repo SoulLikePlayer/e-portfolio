@@ -2,11 +2,12 @@
 .parcours-page {
   position: relative;
   padding: 20px;
-  background-color: #f8f9fa;
   border-radius: 15px;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
   max-width: 1400px;
   margin: 0 auto;
+
+  box-shadow: var(--article-container-box-shadow);
+  background-color: var(--article-container-bg-color);
 }
 
 /* Titre principal de la section */

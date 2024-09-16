@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectCarousel from '../composents/ProjectCarousel';
 import { projects } from "../data/project";
 
-import '../../styles/article/Project.css'
+import '../../styles/article/Project.css';
 
 const Project = ({ closeSquare }) => {
   return (
@@ -19,7 +19,7 @@ const Project = ({ closeSquare }) => {
         </div>
         <div className="legend-item">
           <div id="waiting-color" className="legend-color"></div>
-          <span className="legend-text">En developpement</span>
+          <span className="legend-text">En développement</span>
         </div>
         <div className="legend-item">
           <div id="complete-color" className="legend-color"></div>
