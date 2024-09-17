@@ -9,8 +9,10 @@ import { FaGraduationCap, FaSchool } from 'react-icons/fa'; // Exemple d'icône
 function Parcours() {
   return (
     <div className="parcours-page">
-      <section className="intro-section text-center py-5 parcours-container">
+      <section className="intro-section text-center py-5">
         <h1 className="parcours-title">Mon Parcours</h1>
+            </section>
+            <div className='parcours-container'>
         <VerticalTimeline>
           {scolaire.map((item, index) => (
             <VerticalTimelineElement
@@ -44,7 +46,7 @@ function Parcours() {
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
-      </section>
+        </div>  
     </div>
   );
 }

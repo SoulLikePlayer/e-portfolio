@@ -1,0 +1,138 @@
+.etude-page {
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--article-container-box-shadow);
+  background-color: var(--article-container-bg-color);
+}
+
+.etude-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.etude-text {
+  border-radius: 10px;
+  box-shadow: var(--article-container-box-shadow);
+  background-color: #ffffff;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.navigation button {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 0.9em;
+  background-color: #c6c6c6;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: var(--article-container-box-shadow);
+}
+
+.navigation button:disabled {
+  background-color: #9d9d9d;
+  cursor: not-allowed;
+}
+
+.navigation .active {
+  background-color: var(--etude-button-active);
+  color: black;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .etude-page {
+    padding: 15px;
+  }
+
+  .etude-text {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .navigation button {
+    padding: 8px 12px;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .etude-page {
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .navigation button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+/* Styles globaux pour les titres */
+h2 {
+  color: #444; /* Couleur sombre pour le contraste */
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd; /* Ligne sous le titre */
+  padding-bottom: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+h3 {
+  color: #555; /* Gris moyen pour le contraste */
+  font-size: 1.2em;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-top: 1px solid #eee; /* Ligne au-dessus du titre */
+  padding-top: 10px;
+  font-weight: 600; /* Gras */
+}
+
+/* Media queries pour rendre les titres responsives */
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.3em; /* Réduction de la taille pour les écrans plus petits */
+    margin-bottom: 8px;
+    border-bottom-width: 1.5px; /* Réduction de la largeur de la bordure */
+  }
+
+  h3 {
+    font-size: 1.1em; /* Réduction de la taille pour les écrans plus petits */
+    margin-top: 12px;
+    margin-bottom: 8px;
+    border-top-width: 1px; /* Réduction de la largeur de la bordure */
+  }
+}
+
+/* Smartphones et très petits écrans */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.2em; /* Réduction supplémentaire pour les très petits écrans */
+    margin-bottom: 6px;
+    border-bottom-width: 1px; /* Réduction maximale de la largeur de la bordure */
+  }
+
+  h3 {
+    font-size: 1em; /* Taille minimale pour les très petits écrans */
+    margin-top: 10px;
+    margin-bottom: 6px;
+    border-top-width: 1px; /* Largeur minimale de la bordure */
+  }
+}

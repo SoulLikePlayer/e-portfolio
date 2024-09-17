@@ -181,6 +181,7 @@ body.light {
   --shadow-color: ;
   --contact-h2-color : #007bff;
   --contact-h2-submit-hover : #0056b3;
+  --etude-button-active : #007bff;
 }
 
 /* Thème sombre */
@@ -202,4 +203,5 @@ body.dark {
   --shadow-color: rgba(0, 255, 255, 0.5);
   --contact-h2-color : #ff00ff;
   --contact-h2-submit-hover : #e900e9;
+  --etude-button-active: #00ffcc;
 }

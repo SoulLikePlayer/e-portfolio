@@ -9,6 +9,7 @@ const Competence = lazy(() => import('./components/article/Competence'));
 const Project = lazy(() => import('./components/article/Project'));
 const Localisation = lazy(() => import('./components/article/Localisation'));
 const Parcours = lazy(() => import('./components/article/Parcours'));
+const Etude = lazy(() => import('./components/article/Etude'));
 
 const componentsMap = {
   'biographie': Biographie,
@@ -16,6 +17,7 @@ const componentsMap = {
   'project': Project,
   'localisation': Localisation,
   'parcours': Parcours,
+  'etude': Etude,
 };
 
 function App() {
