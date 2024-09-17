@@ -84,7 +84,7 @@
 }
 
 /* Styles globaux pour les titres */
-h2 {
+.etude-text h2 {
   color: #444; /* Couleur sombre pour le contraste */
   font-size: 1.5em;
   margin-bottom: 10px;
@@ -93,7 +93,7 @@ h2 {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
-h3 {
+.etude-text h3 {
   color: #555; /* Gris moyen pour le contraste */
   font-size: 1.2em;
   margin-top: 15px;
@@ -107,13 +107,13 @@ h3 {
 
 /* Tablettes et petits écrans */
 @media (max-width: 768px) {
-  h2 {
+  .etude-text h2 {
     font-size: 1.3em; /* Réduction de la taille pour les écrans plus petits */
     margin-bottom: 8px;
     border-bottom-width: 1.5px; /* Réduction de la largeur de la bordure */
   }
 
-  h3 {
+  .etude-text h3 {
     font-size: 1.1em; /* Réduction de la taille pour les écrans plus petits */
     margin-top: 12px;
     margin-bottom: 8px;
@@ -123,13 +123,13 @@ h3 {
 
 /* Smartphones et très petits écrans */
 @media (max-width: 480px) {
-  h2 {
+  .etude-text h2 {
     font-size: 1.2em; /* Réduction supplémentaire pour les très petits écrans */
     margin-bottom: 6px;
     border-bottom-width: 1px; /* Réduction maximale de la largeur de la bordure */
   }
 
-  h3 {
+  .etude-text h3 {
     font-size: 1em; /* Taille minimale pour les très petits écrans */
     margin-top: 10px;
     margin-bottom: 6px;
