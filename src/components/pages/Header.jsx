@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 function Header({ toggleTheme, theme }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  document.addEventListener('scroll', console.log("scroll detected"));
+
   useEffect(() => {
     const handleResize = () => {
       setIsOpen(window.innerWidth > 992); 

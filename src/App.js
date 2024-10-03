@@ -29,17 +29,21 @@ function App() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setTheme(savedTheme);
-      document.body.className = savedTheme; // Applique la classe sauvegardée
+      document.body.className = savedTheme;
     } else {
-      document.body.className = 'light'; // Applique le thème par défaut
+      document.body.className = 'light';
     }
   }, []);
 
-
+  useEffect(() => {
+    // Émettre un événement lorsque le thème change
+    const event = new Event('themeChange');
+    window.dispatchEvent(event);
+  }, [theme]);
 
   const handleContentChange = (newContent) => {
     setContent(newContent);
-    document.body.classList.add('square-open'); // Empêche le scroll sur le body
+    document.body.classList.add('square-open');
     if (squareRef.current) {
       squareRef.current.classList.add('show');
     }
@@ -49,17 +53,15 @@ function App() {
     if (squareRef.current) {
       squareRef.current.classList.remove('show');
     }
-    document.body.classList.remove('square-open'); // Réactive le scroll sur le body
+    document.body.classList.remove('square-open');
   };
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    document.body.className = newTheme; // Applique la nouvelle classe
+    document.body.className = newTheme;
     localStorage.setItem('theme', newTheme);
   };
-
-
 
   const SelectedComponent = componentsMap[content] || null;
 

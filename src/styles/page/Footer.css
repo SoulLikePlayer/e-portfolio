@@ -4,6 +4,7 @@ footer {
   color: var(--primary-color);
   padding: 20px 0;
   text-align: center;
+   margin-top: auto;
 }
 
 .footer-content {

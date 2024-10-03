@@ -77,7 +77,35 @@
   color: var(--slider-icon-color);
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 5px var(--slider-checked-bg);
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  background-color: hsl(236, 32%, 26%);
+  overflow: hidden;
+  cursor: pointer;
 }
+
+.theme-toggle-button::after {
+  content: '';
+  z-index: -1;
+  background-color: hsla(0, 0%, 55%, 0.105);
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  width: 1.25em;
+  transform: translate3d(-525%, 0, 0) rotate(35deg);
+}
+
+.theme-toggle-button:hover::after {
+  transition: transform 0.45s ease-in-out;
+  transform: translate3d(525%, 0, 0) rotate(35deg);
+}
+
 
 body.dark .custom-header {
   box-shadow: 0 0 25px var(--shadow-color);
@@ -116,3 +144,4 @@ body.dark .nav-link {
   color: var(--primary-color);
   box-shadow: 0 0 15px var(--neon-color-1);
 }
+

@@ -9,6 +9,8 @@ import { Typewriter } from 'react-simple-typewriter';
 import { articlesData } from '../data/article';
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
 
+import StyledText from '../composents/StyledText';
+
 function Content({ onContentChange }) {
   const [articles, setArticles] = useState(articlesData);
   const [transitioning, setTransitioning] = useState(null);
@@ -205,14 +207,14 @@ function Content({ onContentChange }) {
 
   return (
     <motion.main
-      initial={{ opacity: 0, filter: 'blur(10px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      initial={{ opacity: 0, filter: "blur(10px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      exit={{ opacity: 0, filter: "blur(10px)" }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <section className="intro-section text-center py-5">
         <h2 className="text-4xl mb-4 eportfolio">
-          <Typewriter words={['Bienvenue sur mon e-portfolio']} />
+          <StyledText text='Bienvenue sur mon e-portfolio'/>
         </h2>
         <p className="text-gray-400">
           <span>Découvrez </span>

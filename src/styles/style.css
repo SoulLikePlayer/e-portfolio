@@ -205,3 +205,28 @@ body.dark {
   --contact-h2-submit-hover : #e900e9;
   --etude-button-active: #00ffcc;
 }
+
+.StyledText{
+   display: inline;
+}
+
+/* Animation pour faire clignoter un élément */
+@keyframes neonFlicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.neon-flicker {
+  animation: neonFlicker 0.1s linear infinite;
+}
+
+/* Animation pour faire disparaître un élément */
+@keyframes neonFade {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.neon-fade {
+  animation: neonFade 3s linear;
+}
