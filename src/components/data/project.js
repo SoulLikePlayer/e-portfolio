@@ -51,5 +51,11 @@ export const projects = [
     "description" : "le pomodoro timer permet de créer un chronomètre avec la méthode de travail pomodoro pouvant modifier le temps de travail et de repos",
     "github" : "https://github.com/SoulLikePlayer/PomodoroChrono",
     "state" : "Complete"
-  } 
+  },
+  {
+    "title" : "Instant Weather | HTML + CSS + JS + BOOTSTRAP + API",
+    "description" : "Ce projet est une application web simple permettant à l'utilisateur de consulter les prévisions météorologiques d'une commune en saisissant un code postal. La version avancée offre des options supp… ",
+    "github" : "https://github.com/SoulLikePlayer/Instant-Weather",
+    "state" : "Complete"
+  }
 ];

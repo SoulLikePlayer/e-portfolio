@@ -66,7 +66,7 @@ function App() {
   const SelectedComponent = componentsMap[content] || null;
 
   return (
-    <Router>
+    <Router basename="/e-portfolio">
       <div>
         <Header toggleTheme={toggleTheme} theme={theme} />
         <div className="square" ref={squareRef}>
