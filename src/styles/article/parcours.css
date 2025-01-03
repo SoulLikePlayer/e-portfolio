@@ -1,0 +1,100 @@
+/* Container principal pour la page du parcours */
+.parcours-page {
+  position: relative;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-shadow: var(--article-container-box-shadow);
+  background-color: var(--article-container-bg-color);
+}
+
+/* Titre principal de la section */
+.parcours-title {
+  font-size: 2.5rem;
+  color: #0d6efd;
+  margin-bottom: 30px;
+}
+
+/* Styles de la timeline */
+.vertical-timeline-element-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+.vertical-timeline-element-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.vertical-timeline-element p {
+  font-size: 1rem;
+  color: #212529;
+  line-height: 1.6;
+}
+
+/* Sous-événements */
+.sub-items {
+  margin-top: 15px;
+}
+
+.sub-item h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 5px;
+}
+
+.sub-item p {
+  font-size: 0.9rem;
+  color: #212529;
+  line-height: 1.5;
+}
+
+/* Styles des cartes lors du survol */
+.vertical-timeline-element--education:hover .vertical-timeline-element-content {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .parcours-title {
+    font-size: 1.8rem;
+  }
+
+  .vertical-timeline-element-title {
+    font-size: 1.2rem;
+  }
+
+  .vertical-timeline-element-subtitle {
+    font-size: 1rem;
+  }
+
+  .vertical-timeline-element p,
+  .sub-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .parcours-title {
+    font-size: 1.6rem;
+  }
+
+  .vertical-timeline-element-title {
+    font-size: 1rem;
+  }
+
+  .vertical-timeline-element-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .vertical-timeline-element p,
+  .sub-item p {
+    font-size: 0.85rem;
+  }
+}

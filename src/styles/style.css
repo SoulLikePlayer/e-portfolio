@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap');
+
+
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow: auto; 
+  overflow-x: hidden;
+  font-family: 'Exo', sans-serif !important; 
+  background-color: var(--background-color);
+}
+
+body.no-scroll {
+  overflow: hidden; 
+}
+
+.square {
+  overflow-y: auto; 
+  overflow-x: auto;
+}
+
+.square.show {
+  overflow-y: auto;
+}
+
+body.square-open {
+  overflow: hidden;
+}
+
+main {
+  padding: 20px;
+}
+
+main .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.article1, .article2, .article3 {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  cursor: pointer;
+}
+
+.article-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.article-content {
+  display: none;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+h2:not(){
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.intro-section {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.eportfolio {
+  font-family: 'Orbitron', sans-serif;
+  font-size: calc(1.5rem + 2vw);
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+  color: var(--neon-color-1);
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+body.dark .eportfolio{
+  border: 2px solid var(--neon-color-1);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.8);
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+}
+
+body.dark .eportfolio::before {
+  content: '»';
+  font-size: calc(4rem + 5vw); /* Augmenter la taille */
+  color: var(--neon-color-2);
+  position: absolute;
+  left: -2.5rem; /* Ajuster la position horizontale */
+  top: 35%;
+  transform: translateY(-50%); /* Centrer verticalement */
+}
+
+
+.eportfolio p {
+  margin: 0;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .eportfolio {
+    font-size: calc(1.2rem + 2vw);
+    padding: 0.4em 0.8em;
+  }
+
+  .eportfolio::before {
+    font-size: calc(1.5rem + 2vw);
+    left: -1.5rem;
+  }
+
+  .eportfolio p {
+    padding-bottom: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .eportfolio {
+    font-size: calc(1rem + 2vw);
+    padding: 0.3em 0.6em;
+  }
+
+  .eportfolio::before {
+    font-size: calc(1.2rem + 2vw);
+    left: -1rem;
+  }
+
+  .eportfolio p {
+    padding-bottom: 0.3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .article-container {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .article-container {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .article-container {
+    margin-bottom: 20px;
+  }
+}
+
+/* Thème clair */
+body.light {
+  --header-bg-color: #f5f5f5;
+  --header-bg-color-darker: #e0e0e0;
+  --primary-color: #333;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+  --slider-bg: #fff;
+  --slider-checked-bg: #007bff;
+  --slider-thumb-bg: #333;
+  --slider-icon-color: #333;
+  --neon-color-1: ;
+  --neon-color-2: ;
+  --background-color: #fafafa;
+  --text-color: #333;
+  --border-color: #007bff;
+  --shadow-color: ;
+  --contact-h2-color : #007bff;
+  --contact-h2-submit-hover : #0056b3;
+  --etude-button-active : #007bff;
+}
+
+/* Thème sombre */
+body.dark {
+  --header-bg-color: #001f3f;
+  --header-bg-color-darker: #001427;
+  --primary-color: #00ffcc;
+  --link-color: #ff00ff;
+  --link-hover-color: #ff0090;
+  --slider-bg: #333;
+  --slider-checked-bg: #00ffcc;
+  --slider-thumb-bg: #f1f1f1;
+  --slider-icon-color: #f1f1f1;
+  --neon-color-1: #00ffcc;
+  --neon-color-2: #ff00ff;
+  --background-color: #001f3f; /* Noir bleuté */
+  --text-color: #b8b7b7;
+  --border-color: #00ffcc;
+  --shadow-color: rgba(0, 255, 255, 0.5);
+  --contact-h2-color : #ff00ff;
+  --contact-h2-submit-hover : #e900e9;
+  --etude-button-active: #00ffcc;
+}
+
+.StyledText{
+   display: inline;
+}
+
+/* Animation pour faire clignoter un élément */
+@keyframes neonFlicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.neon-flicker {
+  animation: neonFlicker 0.1s linear infinite;
+}
+
+/* Animation pour faire disparaître un élément */
+@keyframes neonFade {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.neon-fade {
+  animation: neonFade 3s linear;
+}

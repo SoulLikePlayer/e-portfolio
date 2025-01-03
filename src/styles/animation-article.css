@@ -1,0 +1,186 @@
+.animated-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 150px !important; 
+  overflow: hidden;
+  padding: 10px; 
+}
+
+
+.article-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animated-article h2 {
+  margin-top: 0;
+  font-size: calc(2rem + 0.5vw);
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  vertical-align: bottom !important;
+  transition: font-size 0.3s ease, margin-top 0.3s ease;
+}
+
+.animated-article p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Animation de texte pour les titres et paragraphes */
+@keyframes textFadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animated-article h2,
+.animated-article p {
+  animation: textFadeInUp 0.5s ease forwards;
+}
+
+/* Boutons pour les articles */
+.grid-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.switch-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.switch-button:hover {
+  background-color: #0056b3;
+}
+
+/* Effet de bordure néon */
+.neon-border {
+  position: relative;
+  border: 2px solid transparent;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: none;
+  border: 2px solid #007bff;
+  z-index: -1;
+  border-radius: 8px;
+  animation: neon-pulse 1.5s infinite;
+}
+
+@keyframes neon-pulse {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.4;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Media query pour ajuster la mise en page sur les petits écrans */
+@media (max-width: 768px) {
+  .grid-buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .switch-button {
+      margin-top: 10px;
+  }
+}
+
+.animated-article:hover h2 {
+  font-size: 1.2rem !important; 
+  margin-top: 0; 
+  transform: translateY(-10px);
+  align-self: flex-start;
+}
+
+.animated-article:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.animated-article:hover .article-content {
+  display: block;
+}
+
+.animated-article + .down-arrow {
+  margin-top: 10px;
+}
+
+/* Flèches vers le bas */
+.down-arrow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em !important; /* Augmenter la taille de la flèche */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.down-arrow:hover {
+  color: #007bff; /* Change color on hover */
+  transform: scale(1.3); /* Améliorer l'effet de hover */
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); /* Effet néon au hover */
+}
+
+/* Flèches vers le haut */
+.up-arrow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  font-size: 30px; /* Même taille que la flèche vers le bas */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.up-arrow:hover {
+  color: #007bff; /* Même effet que la flèche vers le bas */
+  transform: scale(1.3);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}

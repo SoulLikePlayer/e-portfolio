@@ -1,0 +1,4 @@
+.localisation-container{
+  box-shadow: var(--article-container-box-shadow);
+  background-color: var(--article-container-bg-color);
+}
