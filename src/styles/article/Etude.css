@@ -103,14 +103,11 @@
   font-weight: 600; /* Gras */
 }
 
-/* Media queries pour rendre les titres responsives */
-
-/* Tablettes et petits écrans */
 @media (max-width: 768px) {
   .etude-text h2 {
-    font-size: 1.3em; /* Réduction de la taille pour les écrans plus petits */
+    font-size: 1.3em; 
     margin-bottom: 8px;
-    border-bottom-width: 1.5px; /* Réduction de la largeur de la bordure */
+    border-bottom-width: 1.5px; 
   }
 
   .etude-text h3 {

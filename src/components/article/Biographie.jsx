@@ -7,13 +7,13 @@ const Biographie = () => {
     <section className="biography-section">
       <div className="biography-header">
         <div className="avatar-container">
-          <img src={data.photo} alt="profil" className="avatar" />
+          <img src="../e-portfolio/img/profil.png" alt="profil" className="avatar" />
         </div>
         <div className="intro-text">
           <h1 className="name-title">{data.name}</h1>
           <p className="role">Développeur Full Stack</p>
           <p className="description">
-            Passionné par le développement web, j'aime créer des solutions élégantes et efficaces qui répondent aux besoins des utilisateurs.
+            Passionné par le développement web et toujours à la recherche de nouvelles opportunités d'apprentissage, je combine mes compétences techniques avec une volonté inébranlable de m'améliorer continuellement.
           </p>
           <div className="action-buttons">
             <a href={data.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
@@ -25,10 +25,16 @@ const Biographie = () => {
       </div>
       <div className="biography-details">
         <h2 className="section-title">À propos de moi</h2>
+        <div className="bio-paragraph">
+          <p>Je m'appelle {data.name}, étudiant en informatique de deuxième année à l'IUT d'Informatique à Ifs. Bien que je ne sois peut-être pas le meilleur, je possède deux qualités essentielles qui me distinguent :</p> 
+          <ul>
+            <li><strong>Une volonté inébranlable de m'améliorer</strong></li>
+            <li><strong>Une envie constante de progresser.</strong></li>
+          </ul> 
+          <p>Ces traits de caractère me permettent d'apprendre rapidement et de m'adapter efficacement aux nouvelles technologies.</p>
+        </div>
         <p className="bio-paragraph">
-          Je suis {data.name}, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat rhoncus tincidunt. In posuere maximus diam vitae rutrum. Mauris gravida odio non nibh cursus, ut eleifend eros consequat. Curabitur id ullamcorper enim. Suspendisse tempus felis non maximus finibus. Cras eget urna elit. Vestibulum aliquet mi id libero luctus, quis ornare enim feugiat. Donec velit sem, imperdiet pulvinar nibh vitae, consequat dictum massa. Quisque posuere dapibus diam. In vitae massa ut tellus luctus bibendum. Vivamus ac urna et eros cursus maximus et at odio. Nulla eu augue vitae leo bibendum semper ut ac augue. Suspendisse ac accumsan ex. </p>
-        <p className="bio-paragraph">
-          Maecenas eu sollicitudin neque. Sed pharetra porttitor gravida. Suspendisse semper lectus nec vulputate accumsan. Phasellus consectetur pellentesque sem. Cras et eros in lorem accumsan tincidunt sed at eros. Etiam accumsan est in ante sodales cursus. Phasellus feugiat magna in ligula venenatis vehicula. Nunc sed fringilla justo, vel vestibulum purus. Integer quis luctus ipsum, quis lacinia lectus. Phasellus placerat, risus sed aliquet finibus, urna leo feugiat nulla, ac faucibus enim ipsum a augue. 
+          Depuis mes débuts en programmation, j'ai acquis une expertise dans des langages variés tels que Java, Python, JavaScript, et bien d'autres. Ma passion pour le développement se reflète dans des projets tels que "GitTutos", une plateforme éducative pour apprendre Git, que je développe actuellement. En plus de mes compétences techniques, mes intérêts pour la philosophie, notamment le stoïcisme, m'aident à aborder les défis avec une perspective analytique et résiliente.
         </p>
         <div className="contact-info">
           <p>Email: <a href={`mailto:${data.email}`} className="bio-link">{data.email}</a></p>

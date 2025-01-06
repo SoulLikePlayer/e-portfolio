@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectCarousel from '../composents/ProjectCarousel';
+import { ProjectCarousel } from '../composents/Carousel';
 import { projects } from "../data/project";
 
 import '../../styles/article/Project.css';

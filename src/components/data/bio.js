@@ -3,5 +3,4 @@ export const data = {
     email: "louislazare.pro@gmail.com",
     phone: "+33783105098",
     github: "https://github.com/SoulLikePlayer/",
-    photo: "../img/profil.png"
   };

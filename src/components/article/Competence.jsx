@@ -35,6 +35,7 @@ const Competences = () => {
                 <p className="skill-name">{skill}</p>
               </div>
             ))}
+            <span className="skill-text">Et bien plus encore !</span>
           </div>
     </section>
   );

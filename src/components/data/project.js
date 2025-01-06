@@ -44,7 +44,7 @@ export const projects = [
     "title": "EvoPython | Python",
     "description" : "EvoPython est un projet visant a l'amélioration de certaine fonctionnalité python",
     "github" : "https://github.com/SoulLikePlayer/EvoPython/tree/EvoList",
-    "state" : "Waiting"
+    "state" : "Error"
   },
   {
     "title" : "POMODORO TIMER | HTML + CSS + JS",
@@ -57,5 +57,10 @@ export const projects = [
     "description" : "Ce projet est une application web simple permettant à l'utilisateur de consulter les prévisions météorologiques d'une commune en saisissant un code postal. La version avancée offre des options supp… ",
     "github" : "https://github.com/SoulLikePlayer/Instant-Weather",
     "state" : "Complete"
+  },
+  {
+    "title" : "WinExtend | C# + Python",
+    "description" : "une assistante virtuelle permettant d'aider les utilisateur de tout type dans les tâches du quotidient !",
+    "state" : "Waiting"
   }
 ];

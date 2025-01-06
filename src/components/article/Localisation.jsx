@@ -4,9 +4,9 @@ import Carte from "../composents/Carte";
 import "../../styles/article/Localisation.css";
 
 const Localisation = ({ closeSquare }) => {
-    const position = [49.2861, -0.5950]; // Position fixe
-    const [posAppareil, setPosAppareil] = useState(null); // Position obtenue via la géolocalisation
-    const [error, setError] = useState(null); // Pour gérer les erreurs
+    const positionCours = [ 49.1487204,  -0.354978]
+    const [posAppareil, setPosAppareil] = useState(null); 
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         if (!navigator.geolocation) {
@@ -33,10 +33,9 @@ const Localisation = ({ closeSquare }) => {
           {error && <p>Erreur: {error}</p>}
         </section>
 
-        {/* Attente de la disponibilité des deux positions avant d'afficher la carte */}
-        {posAppareil && position ? (
+        {posAppareil && positionCours ? (
           <>
-            <Carte position={position} positionAppareil={posAppareil} />
+            <Carte position={positionCours} positionAppareil={posAppareil} />
           </>
         ) : (
           <p>Obtention des positions en cours...</p>

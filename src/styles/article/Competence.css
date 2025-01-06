@@ -8,6 +8,9 @@
   background-color: var(--article-container-bg-color);
 }
 
+.skill-text{
+  text-align: center;
+}
 .skills-title {
   text-align: center;
   font-size: 2.5rem;
@@ -91,3 +94,4 @@
     font-size: 1rem;
   }
 }
+

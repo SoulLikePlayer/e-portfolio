@@ -4,7 +4,6 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "../../styles/composents/Carte.css";
 
-// Icone personnalisée pour le marqueur
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -13,8 +12,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const Carte = ({ position , positionAppareil }) => {
-  // Coordonnées pour la polyline
+const Carte = ({ position, positionAppareil }) => {
   const positions = [positionAppareil, position];
 
   return (
@@ -26,7 +24,7 @@ const Carte = ({ position , positionAppareil }) => {
         />
         <Marker position={position}>
           <Popup>
-            <span>J'Habite ici. Coordonnées : {position[0].toFixed(4)}, {position[1].toFixed(4)}</span>
+            <span>Ici se trouve mon habitation. Coordonnées : {position[0].toFixed(4)}, {position[1].toFixed(4)}</span>
           </Popup>
         </Marker>
 

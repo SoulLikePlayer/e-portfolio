@@ -8,13 +8,13 @@ export const ComputerSkills = [
   "Tailwind CSS",
   "Python",
   "Java",
-  "JavaFX",
   "Rust",
   "PHP",
   "Bootstrap",
   "Foundation", 
   "Flask",
-  "Angular"
+  "Angular",
+  "C#"
 ];
 
 export const WorkingSkill = [

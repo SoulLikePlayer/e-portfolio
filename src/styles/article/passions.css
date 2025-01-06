@@ -1,0 +1,24 @@
+.passion-page {
+  padding: 20px;
+  max-width: 100%;
+  margin: 0 auto; 
+  box-shadow: var(--article-container-box-shadow);
+  background-color: var(--article-container-bg-color);
+}
+
+
+@media (max-width: 768px) {
+  .passion-title {
+    font-size: 2rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .close-btn {
+    font-size: 1.8rem;
+  }
+
+  .passion-title {
+    font-size: 1.8rem; /* Réduction du titre sur petits écrans */
+  }
+}

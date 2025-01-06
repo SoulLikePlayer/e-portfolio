@@ -97,8 +97,8 @@ function Content({ onContentChange }) {
             case 'localisation':
               newArticles[index] = {
                 id: 'etude',
-                title: 'Mes études actuelles', 
-                content: 'Découvrez les formations et diplômes que je poursuis actuellement, ainsi que les compétences développées à travers mes études.',
+                title: 'Mes formation supérieur', 
+                content: 'Découvrez la formations et ke diplômes supérieur que je poursuis et/ou que j\'ai poursuivie, ainsi que les compétences développées à travers mes études.',
               };
               break;
             case 'hobbit':
@@ -180,7 +180,7 @@ function Content({ onContentChange }) {
               newArticles[index] = { 
                 id: 'hobbit', 
                 title: 'Mes passions', 
-                content: 'Description de l\'article 3.' 
+                content: 'Découvrez mes différente passion dans la vie de tout les jours.' 
               };
               break;  
             case 'reve':

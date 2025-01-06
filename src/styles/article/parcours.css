@@ -1,4 +1,3 @@
-/* Container principal pour la page du parcours */
 .parcours-page {
   position: relative;
   padding: 20px;
@@ -9,14 +8,12 @@
   background-color: var(--article-container-bg-color);
 }
 
-/* Titre principal de la section */
 .parcours-title {
   font-size: 2.5rem;
   color: #0d6efd;
   margin-bottom: 30px;
 }
 
-/* Styles de la timeline */
 .vertical-timeline-element-title {
   font-size: 1.5rem;
   font-weight: 600;
