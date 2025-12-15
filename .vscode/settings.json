@@ -3,5 +3,7 @@
     "docwriter.progress.trackMethods": true,
     "docwriter.progress.trackClasses": true,
     "docwriter.progress.trackTypes": true,
-    "docwriter.style": "Auto-detect"
+    "docwriter.style": "Auto-detect",
+    "chat.agent.codeBlockProgress": false,
+    "chat.agent.enabled": false
 }
