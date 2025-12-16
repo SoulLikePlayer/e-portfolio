@@ -2,7 +2,7 @@ import react from "react";
 
 function HomePage(){
     return(
-        <div className="page-container">
+        <div className="main-container">
             <p>Je m'appelle Louis LAZARE</p>
         </div>
     );
